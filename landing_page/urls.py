@@ -1,5 +1,6 @@
 from django.conf.urls import url
+from .views import LandingPage
 
 urlpatterns = [
-    # url(r'^home/', include(admin.site.urls)),
+    url(r'^', LandingPage.as_view(), name='landing'),
 ]
