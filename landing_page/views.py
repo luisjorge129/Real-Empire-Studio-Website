@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView
 
+from .models import Subscribe
 
-class LandingPage(TemplateView):
+class LandingPage(CreateView):
     template_name = "coming_soon/landing.html"
+    model = Subscribe
+    fields = ['email']
+    success_url = '/'

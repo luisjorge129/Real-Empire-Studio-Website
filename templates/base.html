@@ -13,11 +13,10 @@
 	    <meta property="og:description" content="{% block description %}{% endblock %}"/>
 	    <meta property="og:type" content="article"/>
 	    <meta property="og:image" content="{% static "" %}"/>
+		<meta property="og:title" content=""/>
+	    <meta property="og:url" content="https://.com/"/>
 		
-		{% block extra_head %}
-	        <meta property="og:title" content=""/>
-	        <meta property="og:url" content="https://.com/"/>
-	    {% endblock %}
+		{% block extra_head %}{% endblock %}
 	</head>
 	<body>
 		{% block header %}
