@@ -3,8 +3,10 @@ from django.views.generic.edit import CreateView
 
 from .models import Subscribe
 
+
 class LandingPage(CreateView):
-    template_name = "coming_soon/landing.html"
+    template_name = "base 2.html"
     model = Subscribe
     fields = ['email']
     success_url = '/'
+
