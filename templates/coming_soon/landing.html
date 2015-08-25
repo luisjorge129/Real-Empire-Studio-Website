@@ -10,54 +10,6 @@
 {% block content %}
 	<section>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-		<style>
-			section {
-			    padding: 100px 0;
-			    text-align: center;
-			}
-			select.frecuency {
-			    border: none;
-			    font-style: italic;
-			    background-color: transparent;
-			    cursor: pointer;
-			    -webkit-transform: translateY(0);
-			    transform: translateY(0);
-			    -webkit-transition: -webkit-transform .35s ease-in;
-			    transition: -webkit-transform .35s ease-in;
-			    border-bottom: none;
-			}
-			select.frecuency:focus {
-			    outline: none;
-			    border-bottom: 5px solid #39b3d7;
-			    -webkit-transform: translateY(-5px);
-			    transform: translateY(-5px);
-			    -webkit-transition: -webkit-transform .35s ease-in;
-			    transition: -webkit-transform .35s ease-in;
-			}
-			.free {
-			    text-transform: uppercase;
-			}
-			.input-group {
-			    margin: 20px auto;
-			    width: 100%;
-			}
-			input.btn.btn-lg,
-			input.btn.btn-lg:focus {
-			    outline: none;
-			    width: 60%;
-			    height: 60px;
-			    border-top-right-radius: 0;
-			    border-bottom-right-radius: 0;
-			}
-			button.btn {
-			    width: 40%;
-			    height: 60px;
-			    border-top-left-radius: 0;
-			    border-bottom-left-radius: 0;
-			}
-		</style>
-
 		<!-- START HEADER -->
 	    <section id="header">
 	        <div class="container">
@@ -74,52 +26,35 @@
 	                <div id="seconds" class="timer_box"></div>
 	            </div>
 	            <!-- END TIMER -->
-	            <div class="col-lg-4 col-lg-offset-4 mt centered">
-	            	<h4>LET ME KNOW WHEN YOU LAUNCH</h4>
-					<form class="form-inline" role="form">
-					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-					  </div>
-					  <button type="submit" class="btn btn-info">Submit</button>
-					</form>            
+	            <div class="row">
+		            <div class="col-lg-12 mt text-center">
+		            	<h4>LET ME KNOW WHEN YOU LAUNCH</h4>
+						
+							<div class="col-md-6 col-md-offset-3">
+						    	 <div class="well">
+						             <form action="{% url 'landing' %}" method="post">
+						            	{% csrf_token %}
+						              <div class="input-group">
+						                 <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+						                 <button class="btn btn-info btn-lg" type="submit">Submit</button>
+						              </div>
+						             </form>
+						    	 </div>
+							</div>
+						</div>
+					</div>
 				</div>
 	            
 	        </div>
-	        <!-- LAYER OVER THE SLIDER TO MAKE THE WHITE TEXTE READABLE -->
-	        <div id="layer"></div>
-	        <!-- END LAYER -->
+
+				<section>
+					<div class="container">
+						
+					</div>
+				</section>
 	    </section>
 	    <!-- END HEADER -->
 
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-			        <hgroup>
-			          <h2>
-			            Subscribe for
-			             <select class="frecuency">
-			                 <option value="0">daily</option>
-			                 <option value="1" selected>weekly</option>
-			                 <option value="2">monthly</option>
-			             </select>
-			            newsletter 
-			          </h2>
-			          <h1 class="free">For Free</h1>
-			         </hgroup>
-			    	 <div class="well">
-			             <form action="{% url 'landing' %}" method="post">
-			            	{% csrf_token %}
-			              <div class="input-group">
-			                 <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
-			                 <button class="btn btn-info btn-lg" type="submit">Submit</button>
-			              </div>
-			             </form>
-			    	 </div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 
 {% endblock %}
@@ -127,4 +62,5 @@
 
 {% block extra_bottom %}
 	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/landing/custom.js'%}"></script>
 {% endblock %}
