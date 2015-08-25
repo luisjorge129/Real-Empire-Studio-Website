@@ -5,7 +5,7 @@ from .models import Subscribe
 
 
 class LandingPage(CreateView):
-    template_name = "base 2.html"
+    template_name = "index.html"
     model = Subscribe
     fields = ['email']
     success_url = '/'
