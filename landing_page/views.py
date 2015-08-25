@@ -3,4 +3,5 @@ from django.views.generic import TemplateView
 
 
 class LandingPage(TemplateView):
-    template_name = "coming_soon/landing.html"
+    # template_name = "coming_soon/landing.html"
+    template_name = "base 2.html"
