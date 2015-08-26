@@ -126,7 +126,7 @@ a:focus {
     height: 100%;
     text-align: center;
     color: #fff;
-    background: url(../img/flat-tire-low.png) no-repeat bottom center scroll;
+    background: url(../img/empire.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -154,7 +154,7 @@ a:focus {
     }
 
     .brand-heading {
-        font-size: 75px;
+        font-size: 50px;
     }
 
     .intro-text {
