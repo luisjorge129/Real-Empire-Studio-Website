@@ -25,9 +25,9 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                    <!-- <li class="page-scroll">
                         <a href="#about">Quienes somos</a>
-                    </li>
+                    </li> -->
                     <li class="page-scroll">
                         <a href="#contact">Clases</a>
                     </li>
@@ -35,7 +35,7 @@
                         <a href="#contact">Precios</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#download">Sobre Nosotros</a>
+                        <a href="#download">About</a>
                     </li>
                     
                 </ul>
@@ -53,7 +53,7 @@
                         <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
                         <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
 
-                        <p class="intro-text">Academia de baile localizada en Bayamón <br>Te invitamos a nuestra gran apertura el <br><u>10 de octubre de 2015</u></p>
+                        <p class="intro-text">Academia de baile en Bayamón que cuenta con maestros y coreógrafos especialistas en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar.  Acompáñanos en nuestra gran Inauguración el  <u>10 de octubre de 2015</u></p>
                        
                          <header>
                         <!-- HEADLINE -->
@@ -69,23 +69,22 @@
                         <!-- END TIMER -->
                         
                             <div class="text-center">
-                                 <p>Mantengase al tanto!</p>
+                                 <p>Manténgase al tanto!</p>
                                     <div class="col-md-12">
                                          <form action="{% url 'landing' %}" method="post">
                                             {% csrf_token %}
                                           <div class="input-group">
                                              <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
-                                             <button class="btn btn-info btn-lg" type="submit">Subscribete</button>
+                                             <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
                                           </div>
                                          </form>
                                     </div>
                                 </div>
-                            <div>
-                                <i class="fa fa-facebook social"></i>
-                                <i class="fa fa-twitter social"></i>
-                                <i class="fa fa-instagram social"></i>
-                                <i class="fa fa-facebook social"></i>
+                            <div id="social-media">
+                                <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
 
+                                <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
+                                <a href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
                             </div>
                         </div>
                         
