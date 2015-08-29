@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView
 
 from .models import Subscribe
+# from .models import Class
 
 
 class LandingPage(CreateView):
@@ -11,3 +12,25 @@ class LandingPage(CreateView):
     fields = ['email']
     success_url = '/'
 
+# class ClassPage(CreateView):
+#     template_name = "class.html"
+#     # template_name = "coming_soon/landing.html"
+#     model = Class
+#     fields = ['email']
+#     success_url = '/'
+
+
+# class PricesPage(CreateView):
+#     template_name = "class.html"
+#     # template_name = "coming_soon/landing.html"
+#     model = Class
+#     fields = ['email']
+#     success_url = '/'
+
+
+# class PricesPage(CreateView):
+#     template_name = "class.html"
+#     # template_name = "coming_soon/landing.html"
+#     model = Class
+#     fields = ['email']
+#     success_url = '/'
