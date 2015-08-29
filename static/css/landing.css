@@ -7,6 +7,11 @@ body{
     padding-bottom: 45px;
 }
 
+.map-contact-box{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 /*---------------------
 --------Counter------
 -----------------------*/
@@ -111,7 +116,6 @@ button.btn {
     height: 250px;
     margin-top: 40px;
     margin-bottom: 40px;
-    font-weight: normal!important;
 }
 
 .teachers-box > h4 > span{

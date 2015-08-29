@@ -7,31 +7,36 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-8 col-md-offset-2" id="first-container">
+        <div class="col-md-10 col-md-offset-1" id="first-container">
             <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
             <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
 
             <h2 class="intro-text">Contactanos</u></h2>
            
-            <div id="map" class="col-xs-12 col-sm-9"></div>
+            
+            <div class="map-contact-box">
+                <div class="col-xs-12 col-sm-7">
+                    <div style="margin: 0px;" id="map"></div>
+                </div>
 
-            <div id="social-media" class="col-xs-12 col-sm-3">
-                <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
-                <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
-                <a href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
+                <div id="social-media" class="col-xs-12 col-sm-3">
+                    <a class="col-sm-12" href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
+                    <a class="col-sm-12" href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
+                    <a class="col-sm-12" href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
+                </div>
+
+                <div class="col-sm-5">
+                    <p class="text-center">Manténgase al tanto!</p>
+                     <form action="{% url 'landing' %}" method="post">
+                        {% csrf_token %}
+                      <div class="input-group">
+                         <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+                         <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
+                      </div>
+                     </form>
+                </div>
             </div>
 
-            <div class="col-sm-12">
-
-                <p class="text-center">Manténgase al tanto!</p>
-                 <form action="{% url 'landing' %}" method="post">
-                    {% csrf_token %}
-                  <div class="input-group">
-                     <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
-                     <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
-                  </div>
-                 </form>
-            </div>
         </div>
     </div>
 {% endblock content %}
