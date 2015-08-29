@@ -101,3 +101,23 @@ button.btn {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+
+.teachers-box{
+              
+}
+
+.teachers-box > div{
+    height: 250px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: normal!important;
+}
+
+.teachers-box > h4 > span{
+    font-weight: bold;
+}
+
+.teachers-box > h5 > span{
+    font-weight: bold;
+}

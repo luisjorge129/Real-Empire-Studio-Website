@@ -11,30 +11,70 @@
             <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
             <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
 
-            <h2 class="intro-text">Contact</u></h2>
+            <h2 class="intro-text">Contactanos</u></h2>
            
-             <header>
-            <!-- HEADLINE -->
-            </header>
-                <div class="text-center">
-                     <p>Manténgase al tanto!</p>
-                        <div class="col-md-12">
-                             <form action="{% url 'landing' %}" method="post">
-                                {% csrf_token %}
-                              <div class="input-group">
-                                 <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
-                                 <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
-                              </div>
-                             </form>
-                        </div>
-                    </div>
-                <div id="social-media">
-                    <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
+            <div id="map" class="col-xs-12 col-sm-9"></div>
 
-                    <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
-                    <a href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
-                </div>
+            <div id="social-media" class="col-xs-12 col-sm-3">
+                <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
+                <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
+                <a href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
+            </div>
+
+            <div class="col-sm-12">
+
+                <p class="text-center">Manténgase al tanto!</p>
+                 <form action="{% url 'landing' %}" method="post">
+                    {% csrf_token %}
+                  <div class="input-group">
+                     <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+                     <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
+                  </div>
+                 </form>
             </div>
         </div>
     </div>
 {% endblock content %}
+
+
+{% block extra_bottom %}
+    <script type="text/javascript">
+        function initMap() {
+            var myLatLng = {lat: 18.415991, lng: -66.162384};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: myLatLng
+            });
+
+            var image = '/static/img/empire.png';
+
+            var beachMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: image,
+            });
+
+            var contentString = "<div style='color: black;'> <h4>Real Empire Studio</h4>" 
+                                + "<table>"
+                                + "<!--<tr><th>Dirección:</th><td></td></tr>-->"
+                                + "<tr><th>Teléfono:<th><td>787-631-0059</td></tr>"
+                                + "<tr><th>Email:<th><td>jefnielestrada@gmail.com</td></tr>"
+                                + "</table>"
+                                + "</div>"
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString,
+            });
+
+
+            google.maps.event.addListener(beachMarker, 'click', function() {
+               infowindow.open(map,beachMarker);
+            });
+            infowindow.open(map,beachMarker);
+        }        
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR5X_m6-TEdlCIi12DJH-5EUiFhtrD-Eg&callback=initMap">
+    </script>
+{% endblock extra_bottom %}
