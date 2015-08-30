@@ -1,36 +1,27 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
+from django.views.generic import TemplateView
+
 
 from .models import Subscribe
 # from .models import Class
 
 
-class LandingPage(CreateView):
+class LandingView(CreateView):
     template_name = "index.html"
     # template_name = "coming_soon/landing.html"
     model = Subscribe
     fields = ['email']
     success_url = '/'
 
-# class ClassPage(CreateView):
-#     template_name = "class.html"
-#     # template_name = "coming_soon/landing.html"
-#     model = Class
-#     fields = ['email']
-#     success_url = '/'
+
+class ClassView(TemplateView):
+    template_name = "class.html"
 
 
-# class PricesPage(CreateView):
-#     template_name = "class.html"
-#     # template_name = "coming_soon/landing.html"
-#     model = Class
-#     fields = ['email']
-#     success_url = '/'
+class PriceView(TemplateView):
+    template_name = "price.html"
 
 
-# class PricesPage(CreateView):
-#     template_name = "class.html"
-#     # template_name = "coming_soon/landing.html"
-#     model = Class
-#     fields = ['email']
-#     success_url = '/'
+class ContactView(TemplateView):
+    template_name = "contact.html"

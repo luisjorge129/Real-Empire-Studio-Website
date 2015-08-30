@@ -11,7 +11,7 @@
     <meta name="keywords" content="geo,tire,geo-tire,tires,flat tire, nearest tire place, Puerto Rico,puerto rico, tire places, flat tires,car">
    
     <meta name="Robots" content="index">
-    <title>Geo-tires</title>
+    <title>Real Empire Studio | Academia de Baile | {% block title %}{% endblock title %}</title>
 
     <!-- Bootstrap Core CSS -->
      <link rel="shortcut icon" href="http://www.bcaa.com/-/media/BCAA/images/icons/product/flat-tire-blue.ashx?w=46&h=46">
@@ -23,16 +23,58 @@
     <link href="/static/css/grayscale.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/geo_tire.css">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
-
-
-    
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">    
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-    {% block content %}
-        
-    {% endblock content %}
+    {% block header %}
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        
+                    </button>
+                    <a class="navbar-brand" href="#page-top">
+                     <!-- <span class="light">Real Empire Studio</span> -->
+    <!--                  <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
+     -->                </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="{% url 'landing' %}">Pagina Principal</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="{% url 'class' %}">Clases y Maestros</a>
+                        </li>
+                          <li class="page-scroll">
+                            <a href="{% url 'price' %}">Precios</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="{% url 'contact' %}">Contactanos</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+    {% endblock header %}
+    <section class="intro" >
+        <div class="intro-body ">
+            <div class="container " >
+                {% block content %}{% endblock content %}
+    </div>
+    </div>
+    </section>
+
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -40,8 +82,7 @@
     <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
     <script src="/../static/js/map.js"></script>-->
    
-    {% block extra_bottom %}
-    {% endblock %}
+    {% block extra_bottom %}{% endblock extra_bottom %}
 </body>
 
 </html>

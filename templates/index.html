@@ -2,121 +2,75 @@
 {% load static %}
 
 {% block title %}
-	Titulo de la pagina
+	Pagina Principal
 {% endblock title %}
 
-    {% block content %}
-      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    
-                </button>
-                <a class="navbar-brand" href="#page-top">
-                 <!-- <span class="light">Real Empire Studio</span> -->
-<!--                  <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
- -->                </a>
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" id="first-container">
+            <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
+            <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
+
+            <p class="intro-text">Academia de baile en Bayamón que cuenta con maestros y coreógrafos especialistas en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar.  Acompáñanos en nuestra gran inauguración el  <u>10 de octubre de 2015</u></p>
+           
+             <header>
+            <!-- HEADLINE -->
+            </header>
+            <!-- START TIMER -->
+            <div id="timer" data-animated="FadeIn">
+                <p id="message"></p>
+                <div id="days" class="timer_box"></div>
+                <div id="hours" class="timer_box"></div>
+                <div id="minutes" class="timer_box"></div>
+                <div id="seconds" class="timer_box"></div>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <!-- <li class="page-scroll">
-                        <a href="#about">Quienes somos</a>
-                    </li> -->
-                    <li class="page-scroll">
-                        <a href="#contact">Clases</a>
-                    </li>
-                      <li class="page-scroll">
-                        <a href="#contact">Precios</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#download">About</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <section class="intro" >
-        <div class="intro-body ">
-            <div class="container " >
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2" id="first-container">
-                        <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
-                        <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
-
-                        <p class="intro-text">Academia de baile en Bayamón que cuenta con maestros y coreógrafos especialistas en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar.  Acompáñanos en nuestra gran inauguración el  <u>10 de octubre de 2015</u></p>
-                       
-                         <header>
-                        <!-- HEADLINE -->
-                        </header>
-                    <!-- START TIMER -->
-                        <div id="timer" data-animated="FadeIn">
-                            <p id="message"></p>
-                            <div id="days" class="timer_box"></div>
-                            <div id="hours" class="timer_box"></div>
-                            <div id="minutes" class="timer_box"></div>
-                            <div id="seconds" class="timer_box"></div>
+            <!-- END TIMER -->
+            
+                <div class="text-center">
+                     <p>Manténgase al tanto!</p>
+                        <div class="col-md-12">
+                             <form action="{% url 'landing' %}" method="post">
+                                {% csrf_token %}
+                              <div class="input-group">
+                                 <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+                                 <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
+                              </div>
+                             </form>
                         </div>
-                        <!-- END TIMER -->
-                        
-                            <div class="text-center">
-                                 <p>Manténgase al tanto!</p>
-                                    <div class="col-md-12">
-                                         <form action="{% url 'landing' %}" method="post">
-                                            {% csrf_token %}
-                                          <div class="input-group">
-                                             <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
-                                             <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
-                                          </div>
-                                         </form>
-                                    </div>
-                                </div>
-                            <div id="social-media">
-                                <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
-
-                                <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
-                                <a href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
-                            </div>
-                        </div>
-                        
-                       <!--  <div class="page-scroll">
-                            <a  id = 'arrow'href="#about" class="btn btn-circle">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                        </div> -->
                     </div>
+                <div id="social-media">
+                    <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
+
+                    <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
+                    <a href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
                 </div>
             </div>
+            
+           <!--  <div class="page-scroll">
+                <a  id = 'arrow'href="#about" class="btn btn-circle">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div> -->
         </div>
-    </section>
+    </div>
 
-        </div>
 
-<!-- 
-        <div id ='about'>
-        <section  class="container content-section text-center">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 ">
-                   <article id="location">
-                      <h1 style="margin-top: 0; margin-bottom: 0; color:#FFF">
-                        Location
-                        </h1>
-                        <span >
-                                {% include "map.html" %}
-                         </span>
-                  </article> 
 
-              </section>
-          </div>
+    <div id ='about'>
+    <section  class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 ">
+               <article id="location">
+                  <h1 style="margin-top: 0; margin-bottom: 0; color:#FFF">
+                    Location
+                    </h1>
+                    <span >
+                            {% include "map.html" %}
+                     </span>
+              </article> 
+
+          </section>
+      </div>
 
 
       </div>
@@ -124,36 +78,35 @@
     </section>
 
     <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact us</h2>
+                    <p>Feel free to email us and provide some feedback, give us suggestions, or just say hello!</p>
+                    <ul class="list-inline banner-social-buttons">
 
-    <div class="download-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-            <h2>Contact us</h2>
-                <p>Feel free to email us and provide some feedback, give us suggestions, or just say hello!</p>
-                <ul class="list-inline banner-social-buttons">
-
-                    <li><a href="https://www.facebook.com/GeoTire" class="btn btn-default btn-lg" target='_blank'> <i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        <li><a href="https://www.facebook.com/GeoTire" class="btn btn-default btn-lg" target='_blank'> <i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        </li>
+                        <li><a href="https://twitter.com/GeoTire" class="btn btn-default btn-lg" target='_blank'> <i class="fa fa-twitter fa-fw"></i> <span class="network-name">TWITTER</span></a>
                     </li>
-                    <li><a href="https://twitter.com/GeoTire" class="btn btn-default btn-lg" target='_blank'> <i class="fa fa-twitter fa-fw"></i> <span class="network-name">TWITTER</span></a>
-                </li>
-                </ul>
-        </div>
-            
+                    </ul>
+            </div>
+                
 
 
+            </div>
         </div>
-    </div>
     </section>
 
     <section id="contact" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-                <h2>Download this proyect</h2>
-                <p>You can download this proyect by simply cloning our repository at </p>
-                <a href="https://github.com/jorgeluis11/hackMaya2014" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-            </div>
-    </div> -->
-</section>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download this proyect</h2>
+                    <p>You can download this proyect by simply cloning our repository at </p>
+                    <a href="https://github.com/jorgeluis11/hackMaya2014" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                </div>
+        </div>
+    </section>
 
 {% endblock content %}
 
