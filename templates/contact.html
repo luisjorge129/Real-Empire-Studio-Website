@@ -12,21 +12,26 @@
             <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
 
             <h2 class="intro-text">Contactanos</u></h2>
-           
-            
+
+
             <div class="map-contact-box">
                 <div class="col-xs-12 col-sm-7">
+                  <h1 style="font-family: 'Jura', sans-serif;">Localizacion</h1>
                     <div style="margin: 0px;" id="map"></div>
                 </div>
 
                 <div id="social-media" class="col-xs-12 col-sm-3">
+                  <h1 style="font-family: 'Jura', sans-serif;text-align: center;margin-left: 0px;margin-top: 20px;">Online</h1>
                     <a class="col-sm-12" href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
+                    <h3 style="font-family: 'Jura', sans-serif;">Facebook</h3>
                     <a class="col-sm-12" href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
+                    <h3 style="font-family: 'Jura', sans-serif;">Twitter</h3>
                     <a class="col-sm-12" href="https://instagram.com/real_empire_family/"><i class="fa fa-instagram social"></i></a>
+                    <h3 style="font-family: 'Jura', sans-serif;">Instagram</h3>
                 </div>
 
                 <div class="col-sm-5">
-                    <p class="text-center">Manténgase al tanto!</p>
+                    <p class="text-center" style="margin-top: 25px;">Manténgase al tanto!</p>
                      <form action="{% url 'landing' %}" method="post">
                         {% csrf_token %}
                       <div class="input-group">
@@ -60,7 +65,7 @@
                 icon: image,
             });
 
-            var contentString = "<div style='color: black;'> <h4>Real Empire Studio</h4>" 
+            var contentString = "<div style='color: black;'> <h4>Real Empire Studio</h4>"
                                 + "<table>"
                                 + "<!--<tr><th>Dirección:</th><td></td></tr>-->"
                                 + "<tr><th>Teléfono:<th><td>787-631-0059</td></tr>"
@@ -77,7 +82,7 @@
                infowindow.open(map,beachMarker);
             });
             infowindow.open(map,beachMarker);
-        }        
+        }
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR5X_m6-TEdlCIi12DJH-5EUiFhtrD-Eg&callback=initMap">
