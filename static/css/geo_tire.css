@@ -272,7 +272,12 @@ button.btn {
     }
 }
 
-@media only screen and (max-device-width: 768px){
+@media only screen and (max-device-width: 768px)
+
+    .input.btn.btn-lg,
+    input.btn.btn-lg:focus {
+       text-align: left;
+    }
     .navbar-collapse{
         background-color: transparent !important;
         text-align: center !important;
