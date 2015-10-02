@@ -257,7 +257,23 @@ button.btn {
     padding-top: 0px !important;
 }
 
+.social-media>h3{
+margin-top:2px;
+}
 
+.contact-phone{
+        margin-top:7px;
+
+    }
+
+@media only screen and (min-device-width: 1200px)  {
+    
+
+    .contact-phone{
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
 
 @media only screen and (min-device-width: 769px) and (max-device-width: 1200px)  {
     
@@ -269,6 +285,11 @@ button.btn {
 
     .page-scroll{
         width: 25%;
+    }
+
+    .contact-phone{
+        font-size: 13px;
+        font-weight: bold;
     }
 }
 
@@ -401,7 +422,8 @@ margin-top: 10px !important;
     }
 
     .intro-text{
-font-size: .4em !important;    }
+        font-size: .3em !important;   
+    }
 
     .page-scroll{
         font-size: 0.4em !important;
