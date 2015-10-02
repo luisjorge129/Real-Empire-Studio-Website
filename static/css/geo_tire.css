@@ -273,9 +273,10 @@ button.btn {
     }
 
     .timer_box{
-        margin-top: 0 !important;
-        margin-bottom: 5px !important;
-        width: 115px !important;
+            width: 118px !important;
+            padding: 0px 0 0 0 !important;
+            margin: 2px 12px !important;
+            height: 115px !important;
     }
 
     .img-responsive {
@@ -322,8 +323,9 @@ button.btn {
     }
 
     .timer_box{
-        margin-top: 0 !important;
-        margin-bottom: 5px !important;
+        width: 112px !important;
+        padding: 0px 0 0 0 !important;
+        margin: 2px 12px !important;
     }
 
     #subscribe-btn{
