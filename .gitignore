@@ -1,9 +1,7 @@
-.DS_Store
-realempire_db
+media/*
+migrations/
+tutorDashboard/tutors_db
 
-venv
-*.pyc
-staticfiles
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

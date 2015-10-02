@@ -14,7 +14,7 @@
     <title>Real Empire Studio | Academia de Baile | {% block title %}{% endblock title %}</title>
 
     <!-- Bootstrap Core CSS -->
-     <link rel="shortcut icon" href="http://www.bcaa.com/-/media/BCAA/images/icons/product/flat-tire-blue.ashx?w=46&h=46">
+     <link rel="shortcut icon" href="">
     <!-- Fonts -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
@@ -25,24 +25,26 @@
     <link rel="stylesheet" href="{% static 'css/landing.css' %}">
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {% block header %}
-        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
                 <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="" />
+                </a>
+            </div>
 
-                    </button>
-                    <a class="navbar-brand" href="#page-top">
-                     <!-- <span class="light">Real Empire Studio</span> -->
-    <!--                  <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
-     -->                </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse"> 
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
@@ -74,10 +76,20 @@
     </div>
     </section>
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="/../static/js/grayscale.js"></script>
+
+    <script type="text/javascript">
+
+    $(".navbar-toggle").click(function(){
+        if($(".collapse").css("display") === "none"){
+            $(".collapse").slideDown();
+        }else
+            $(".collapse").slideUp();
+    });
+    </script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
     <script src="/../static/js/map.js"></script>-->
 
