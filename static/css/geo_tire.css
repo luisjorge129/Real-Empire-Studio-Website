@@ -272,12 +272,17 @@ button.btn {
     }
 }
 
-@media only screen and (max-device-width: 768px)
+@media only screen and (max-device-width: 768px){
 
     .input.btn.btn-lg,
     input.btn.btn-lg:focus {
-       text-align: left;
+        outline: none;
+        width: 60%;
+        height: 60px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
+
     .navbar-collapse{
         background-color: transparent !important;
         text-align: center !important;
@@ -329,11 +334,11 @@ button.btn {
     }
 
     .intro-text{
-        font-size: 1.5em !important;
+        font-size: .5em !important;
     }
 
    .page-scroll{
-        font-size: 1.4em !important;
+        font-size: .4em !important;
         border-bottom: 1px solid rgba(255,255,255,0.4);
     }
 
