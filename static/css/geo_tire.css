@@ -144,6 +144,8 @@ button.btn {
     padding-top: 50px;
 }
 
+
+
 .social{
     /*padding: 10px 15px;*/
     padding-top: 7px;
@@ -348,6 +350,10 @@ margin-top:2px;
     {
         padding-top: 30px !important;
         padding-bottom: 20px;
+    }
+
+    .no-border{
+        border:none !important;
     }
 
     .map-contact-box{
