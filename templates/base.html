@@ -21,7 +21,7 @@
     <!-- Custom Theme CSS -->
     <link href="/static/css/grayscale.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/geo_tire.css">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/landing.css' %}">
 </head>
 
@@ -89,6 +89,27 @@
         }else
             $(".collapse").slideUp();
     });
+
+    $(function () {
+      var nua = navigator.userAgent
+      var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+      if (isAndroid) {
+        $('select.form-control').removeClass('form-control').css('width', '100%')
+      }
+    }) 
+
+    // Copyright 2014-2015 Twitter, Inc.
+    // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+      var msViewportStyle = document.createElement('style')
+      msViewportStyle.appendChild(
+        document.createTextNode(
+          '@-ms-viewport{width:auto!important}'
+        )
+      )
+      document.querySelector('head').appendChild(msViewportStyle)
+    }
+
     </script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
     <script src="/../static/js/map.js"></script>-->
