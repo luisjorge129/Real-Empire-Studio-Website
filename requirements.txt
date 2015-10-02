@@ -1,1 +1,1 @@
--r real_empire_studio/requirements/dev.txt
+-r real_empire_studio/requirements/prod.txt
