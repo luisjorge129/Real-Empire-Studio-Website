@@ -25,14 +25,13 @@
                 <div id="seconds" class="timer_box"></div>
             </div>
             <!-- END TIMER -->
-
                 <div class="text-center">
                      <p>Manténgase al tanto!</p>
                         <div class="col-md-12">
                              <form action="{% url 'landing' %}" method="post">
                                 {% csrf_token %}
                               <div class="input-group">
-                                 <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+                                 <input name="email" id="email" type="email" placeholder="Your Email" required>
                                  <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
                               </div>
                              </form>
@@ -40,7 +39,6 @@
                     </div>
                 <div id="social-media">
                     <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
-
                     <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
                     <a href="https://instagram.com/realempirestudio/"><i class="fa fa-instagram social"></i></a>
                 </div>

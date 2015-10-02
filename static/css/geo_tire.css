@@ -367,6 +367,7 @@ margin-top:2px;
    .page-scroll{
         font-size: .4em !important;
         border-bottom: 1px solid rgba(255,255,255,0.4);
+        width: 20%;
     }
 
     #page-top{
