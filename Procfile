@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath tutorDashboard config.wsgi
+web: gunicorn real_empire_studio.wsgi
