@@ -1,6 +1,6 @@
 media/*
 migrations/
-tutorDashboard/tutors_db
+realempire_db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
