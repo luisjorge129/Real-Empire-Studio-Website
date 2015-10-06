@@ -270,7 +270,6 @@ margin-top:2px;
 
 .text-box{
 
-
     outline: none;
     width: 60%;
     height: 60px;
@@ -317,6 +316,8 @@ margin-top:2px;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+        cursor:auto !important;
+
 }
 
 .font-subscribe{
@@ -738,8 +739,8 @@ body {
 }
 
 .go-down-more{
-    padding-top:37px !important;
-    padding-bottom: 36px !important;
+        padding-top: 25px !important;
+    padding-bottom: 24px !important;
 }
 
 .list-group-item{
