@@ -46,10 +46,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-from django.conf import global_settings
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
-)
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 ROOT_URLCONF = 'real_empire_studio.urls'
