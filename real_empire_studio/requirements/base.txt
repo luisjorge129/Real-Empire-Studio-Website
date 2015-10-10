@@ -1,5 +1,4 @@
 bootstrap-admin==0.3.6
-dj-static==0.6.1
 Django==1.8.5
 django-autoslug==1.8.0
 gunicorn==19.3.0
