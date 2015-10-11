@@ -9,8 +9,8 @@ class TeacherAdmin(admin.ModelAdmin):
     		  'twitter', 'instagram', 'course',
     		  'status')
     list_display = ('id', 'name', 'facebook',
-    		  		'twitter', 'instagram', 'course',
-    		  		'status', 'created_date', 'updated_date')
+    		  		'twitter', 'instagram', 'status',
+                    'created_date', 'updated_date')
     list_display_links = ['id', 'name']
     list_filter = ['course', 'status']
     search_fields = ['id', 'name', 'courses']

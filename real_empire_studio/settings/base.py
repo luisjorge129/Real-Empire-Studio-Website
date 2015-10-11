@@ -33,6 +33,8 @@ INSTALLED_APPS = (
 
     'core',
     'landing_page',
+    'teachers',
+    'events',
 )
 
 MIDDLEWARE_CLASSES = (
