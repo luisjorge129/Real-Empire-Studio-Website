@@ -10,33 +10,21 @@
         <div class="col-md-8 col-md-offset-2" id="first-container">
             <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
             <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
+            <p class="intro-text">Academia de baile en Bayamón que cuenta con maestros y coreógrafos especializados en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar.</u></p>
 
-            <p class="intro-text">Academia de baile en Bayamón que cuenta con maestros y coreógrafos especializados en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar.  Acompáñanos en nuestra gran inauguración el  <u>10 de octubre de 2015</u></p>
-
-             <header>
-            <!-- HEADLINE -->
-            </header>
-            <!-- START TIMER -->
-            <div id="timer" data-animated="FadeIn">
-                <p id="message"></p>
-                <div id="days" class="timer_box"></div>
-                <div id="hours" class="timer_box"></div>
-                <div id="minutes" class="timer_box"></div>
-                <div id="seconds" class="timer_box"></div>
-            </div>
             <!-- END TIMER -->
                 <div class="text-center">
-                     <p>Manténgase al tanto!</p>
-                        <div class="col-md-12">
-                             <form action="{% url 'landing' %}" method="post">
-                                {% csrf_token %}
-                              <div class="input-group">
-                                 <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
-                                 <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
-                              </div>
-                             </form>
-                        </div>
+                    <div class="col-md-12">
+                        <h1><strong>Abierta Ya!!</strong></h1>
+                         <form action="{% url 'landing' %}" method="post">
+                            {% csrf_token %}
+                          <div class="input-group">
+                             <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
+                             <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
+                          </div>
+                         </form>
                     </div>
+                </div>
                 <div id="social-media">
                     <a href="https://www.facebook.com/real.empire.739?fref=ts"><i class="fa fa-facebook social"></i></a>
                     <a href="https://twitter.com/Realempire_pr?lang=en"><i class="fa fa-twitter social"></i></a>
@@ -51,14 +39,12 @@
             </div> -->
         </div>
     </div>
-
-
-
-    
+    <br/>
+    <br/>
+    <br/>
 {% endblock content %}
 
 {% block extra_bottom %}
-    <script type="text/javascript" src="{% static 'js/landing/custom.js'%}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
    
