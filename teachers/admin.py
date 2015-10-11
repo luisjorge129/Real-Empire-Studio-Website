@@ -5,7 +5,7 @@ from .models import Course
 
 class TeacherAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
-    fields = ('name', 'image', 'facebook',
+    fields = ('name', 'biography', 'facebook',
     		  'twitter', 'instagram', 'course',
     		  'status')
     list_display = ('id', 'name', 'facebook',

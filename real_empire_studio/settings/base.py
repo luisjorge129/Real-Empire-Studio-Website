@@ -31,10 +31,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'tinymce',
+
     'core',
     'landing_page',
     'teachers',
     'events',
+
 )
 
 MIDDLEWARE_CLASSES = (
