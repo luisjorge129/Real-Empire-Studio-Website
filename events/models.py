@@ -17,6 +17,7 @@ class Event(TimeStampedModel):
 
 
 class Video(TimeStampedModel):
-	name = models.CharField(max_length=100)
+	youtube_url = models.URLField()
+	name = models.CharField(max_length=100, blank=True)
 	description = models.TextField(blank=True)
 	status = models.BooleanField(default=True)
