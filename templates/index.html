@@ -16,7 +16,7 @@
                 <div class="text-center">
                     <div class="col-md-12">
                         <h1><strong>Abierto Ya!!</strong></h1>
-                         <form action="{% url 'landing' %}" method="post">
+                         <form action="{% url 'landing:landing_page' %}" method="post">
                             {% csrf_token %}
                           <div class="input-group">
                              <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>

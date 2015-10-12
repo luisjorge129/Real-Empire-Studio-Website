@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic.detail import DetailView
 
-# Create your views here.
+from .models import Teacher
+
+
+class TeachersDetailView(DetailView):
+    model = Teacher
+    template_name = "teacher_detail.html"
+    context_object_name = 'teacher'
+    lookup_field = "slug"

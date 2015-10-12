@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
-
+from django.views.generic.list import ListView
 
 from .models import Subscribe
+from teachers.models import Teacher
 # from .models import Class
 
 
@@ -22,8 +23,10 @@ class SubscribeView(TemplateView):
     # success_url = '/'
 
 
-class ClassView(TemplateView):
+class ClassView(ListView):
+    model = Teacher
     template_name = "class.html"
+    context_object_name = 'teachers'
 
 
 class PriceView(TemplateView):

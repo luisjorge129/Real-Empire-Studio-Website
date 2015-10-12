@@ -59,7 +59,7 @@
                  </div>
 
                 <div class="col-xs-12 col-sm-5">
-                     <form action="{% url 'landing' %}" method="post">
+                     <form action="{% url 'landing:landing_page' %}" method="post">
                         {% csrf_token %}
                       <div class="input-group">
                          <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>

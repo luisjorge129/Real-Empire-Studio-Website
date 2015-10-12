@@ -7,7 +7,7 @@ from .views import SubscribeView
 
 
 urlpatterns = [
-    url(r'^$', LandingView.as_view(), name='landing'),
+    url(r'^$', LandingView.as_view(), name='landing_page'),
     url(r'^subscribe/$', SubscribeView.as_view(), name='subscribe'),
     url(r'^precios/$', PriceView.as_view(), name='price'),
     url(r'^clases/$', ClassView.as_view(), name='class'),

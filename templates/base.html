@@ -17,12 +17,12 @@
     <!-- Bootstrap Core CSS -->
      <link rel="shortcut icon" href="">
     <!-- Fonts -->
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
     <!-- Custom Theme CSS -->
-    <link href="/static/css/grayscale.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/geo_tire.css">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/grayscale.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/geo_tire.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/landing.css' %}">
 
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-touch-icon-57x57.png' %}">
@@ -42,6 +42,7 @@
     {# <meta name="msapplication-TileColor" content="#da532c"> #}
     <meta name="msapplication-TileImage" content="{% static 'img/favicon/mstile-144x144.png' %}">
     {# <meta name="theme-color" content="#ffffff"> #}
+    {% block extra_head %}{% endblock extra_head %}
 </head>
 
 
@@ -67,16 +68,16 @@
                             <a href="#page-top"></a>
                         </li>
                         <li class="page-scroll">
-                            <a href="{% url 'landing' %}">Pagina Principal</a>
+                            <a href="{% url 'landing:landing_page' %}">Pagina Principal</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="{% url 'class' %}">Clases y Maestros</a>
+                            <a href="{% url 'landing:class' %}">Clases y Maestros</a>
                         </li>
                           <li class="page-scroll">
-                            <a href="{% url 'price' %}">Precios</a>
+                            <a href="{% url 'landing:price' %}">Precios</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="{% url 'contact' %}">Contactanos</a>
+                            <a href="{% url 'landing:contact' %}">Contactanos</a>
                         </li>
 
                     </ul>
@@ -86,6 +87,7 @@
             <!-- /.container -->
         </nav>
     {% endblock header %}
+    
     <section class="intro" >
         <div class="intro-body ">
             <div class="container " >
@@ -94,10 +96,10 @@
         </div>
     </section>
 
-    <script src="/../static/js/jquery-1.10.2.js"></script>
+    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
 
-    <script src="/../static/js/jquery.easing.min.js"></script>
-    <script src="/../static/js/grayscale.js"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/grayscale.js' %}"></script>
 
     <script type="text/javascript">
 
