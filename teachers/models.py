@@ -14,7 +14,7 @@ class Teacher(TimeStampedModel):
 	biography = tinymce_models.HTMLField()
 	facebook = models.URLField(blank=True)
 	twitter = models.URLField(blank=True)
-	instagram = models.URLField(blank=True)
+	google_plus = models.URLField(blank=True)
 	course = models.ManyToManyField("teachers.Course")
 	status = models.BooleanField(default=True)
 

@@ -6,10 +6,10 @@ from .models import Course
 class TeacherAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
     fields = ('name', 'biography',
-    		   'facebook', 'twitter', 'instagram',
+    		   'facebook', 'twitter', 'google_plus',
                'course', 'status')
     list_display = ('id', 'name',
-                    'facebook', 'twitter', 'instagram',
+                    'facebook', 'twitter', 'google_plus',
                     'status', 'created_date', 'updated_date')
     list_display_links = ['id', 'name']
     list_filter = ['course', 'status']

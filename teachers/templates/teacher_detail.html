@@ -14,63 +14,78 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2" id="first-container">
-            <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
-            <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" id="first-container">
+      <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
+      <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
 
-            <h2 class="intro-text">Maestros</h2>
+      <h2 class="intro-text">Maestro</h2>
 
-            <div class="row">
-              <div class="col-lg-12 col-sm-12">
-                <div class="card hovercard">
-                    <div class="card-background">
-                        <img class="card-bkimg" alt="" src="{% static 'img/jaykob.jpg' %}">
-                        <!-- http://lorempixel.com/850/280/people/9/ -->
-                    </div>
-                    <div class="useravatar">
-                        <img alt="" src="{% static 'img/jaykob.jpg' %}">
-                    </div>
-                    <div class="card-info"> <span class="card-title">{{ teacher.name }}</span>
-
-                    </div>
-                </div>
-                <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                            <div class="hidden-xs">Stars</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                            <div class="hidden-xs">Favorites</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <div class="hidden-xs">Following</div>
-                        </button>
-                    </div>
-                </div>
-
-                    <div class="well">
-                  <div class="tab-content">
-                    <div class="tab-pane fade in active" id="tab1">
-                      <h3>This is tab 1</h3>
-                    </div>
-                    <div class="tab-pane fade in" id="tab2">
-                      <h3>This is tab 2</h3>
-                    </div>
-                    <div class="tab-pane fade in" id="tab3">
-                      <h3>This is tab 3</h3>
-                    </div>
-                  </div>
-                </div>
+      <section>
+         <div class="col-xs-10 col-xs-offset-1">
+            <div class="panel panel-default panel-card">
+              <div class="panel-heading">
+                  <img src="https://unsplash.imgix.net/12/barley.jpg?q=75&fm=jpg&s=f39de5ca1970a13dbe6af6c86b3c47ec" />
+                  <!--<button class="btn btn-primary btn-sm" role="button"></button>-->
               </div>
-            </div>
-          </div>
-        </div>
-    </div>
+              <div class="panel-figure">
+                  <img class="img-responsive img-circle" src="{% static 'img/jaykob.jpg' %}" />
+              </div>
+              <div class="panel-body">
+                  <h3 class="panel-header text-center"><strong>{{ teacher.name }}</strong></h3>
+                  <div class="panel-body-text text-left">
+                    <p>{{ teacher.biography|safe }}</p>
+                  </div>
+              </div>
+              <div class="text-center center-block social-box row">
+                  {% if teacher.facebook %}
+                    <div class="col-xs-4">
+                      <a href="{{ teacher.facebook }}" target="_blank"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                    </div>
+                  {% endif %}
+                  {% if teacher.twitter %}
+                    <div class="col-xs-4">
+                      <a href="{{ teacher.twitter }}" target="_blank"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                    </div>
+                  {% endif %}
+                  {% if teacher.googleplus %}
+                    <div class="col-xs-4">                  
+                      <a href="{{ teacher.googleplus }}" target="_blank"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                    </div>
+                  {% endif %}
+              </div>
+            </div>   
+          </div>  
+        </section>
+      </div>
+  </div>
+
+
+
+
+
+  <!-- Social Footer, Colour Matching Icons -->
+<!-- Include Font Awesome Stylesheet in Header -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- Social Footer, Single Coloured -->
+<!-- Include Font Awesome Stylesheet in Header -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- // -->
+<div class="container">
+<h3>Single Coloured</h3>
+    <hr />
+        <div class="text-center center-block">
+            <p class="txt-railway">- Bootsnipp.com -</p>
+            <br />
+                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social"></i></a>
+              <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social"></i></a>
+              <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social"></i></a>
+              <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+</div>
+    <hr />
+</div>
 {% endblock content %}
 
 {% block extra_bottom %}
