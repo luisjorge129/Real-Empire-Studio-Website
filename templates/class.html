@@ -122,7 +122,7 @@
             <div class="row teachers-box">
               {% for teacher in teachers %}
                 <div class="col-xs-12 col-sm-4">
-                  <a href="{% url 'teachers:teachers_detail' 'luis-perez' %}">
+                  <a href="{% url 'teachers:teachers_detail' teacher.slug %}">
                     <img src="{% static 'img/jaykob.jpg' %}" alt="Tatiana Maestra | Real Empire Studio" class="img-responsive img-circle">
                     <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
                   </a>
