@@ -136,3 +136,8 @@ button.btn {
     height: 100%;
     border: 0;
 }
+
+.generic-error{
+    margin-top: 200px;
+    font-size: 115px;
+}
