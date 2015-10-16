@@ -9,7 +9,7 @@ DATABASES = {
 
 ALLOWED_HOSTS = ['*']
 
-DEBUG = True
+DEBUG = False
 
 SECRET_KEY = 'test'
 
