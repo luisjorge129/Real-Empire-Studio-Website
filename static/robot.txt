@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Disallow: /subscribe/
+Sitemap: http://www.realempirestudio.com/static/sitemap.xml
