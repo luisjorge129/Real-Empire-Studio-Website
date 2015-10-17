@@ -109,20 +109,6 @@
                 </div>
             </div>
             <br>
-
-            <h2 class="intro-text">Maestros</h2>
-
-            <div class="row teachers-box">
-              {% for teacher in teachers %}
-                <div class="col-xs-12 col-sm-4">
-                  <a href="{% url 'teachers:teachers_detail' teacher.slug %}">
-                    <img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle">
-                    <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
-                  </a>
-                    <h5 style="font-family: 'Jura', sans-serif;"><span>Clase: </span>Hiphop principiante, Swagg style ó Krump</h5>
-                </div>
-              {% endfor %}
-            </div>
           </div>
         </div>
     </div>

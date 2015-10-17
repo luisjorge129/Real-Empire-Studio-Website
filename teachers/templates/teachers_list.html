@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	| Clases
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description" content="Horarios, clases y maestros que ofrece la Academia Real Empire Studio.">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" id="first-container">
+            <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
+            <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
+
+            <h2 class="intro-text">Maestros</h2>
+
+            <div class="row teachers-box">
+              {% for teacher in teachers %}
+                <div class="col-xs-12 col-sm-4">
+                  <a href="{% url 'teachers:teachers_detail' teacher.slug %}">
+                    <img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle">
+                    <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
+                  </a>
+                    <h5 style="font-family: 'Jura', sans-serif;"><span>Clase: </span>Hiphop principiante, Swagg style ó Krump</h5>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

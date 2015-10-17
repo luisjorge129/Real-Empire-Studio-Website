@@ -1,6 +1,13 @@
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 from .models import Teacher
+
+
+class TeachersListView(ListView):
+    model = Teacher
+    template_name = "teachers_list.html"
+    context_object_name = 'teachers'
 
 
 class TeachersDetailView(DetailView):
