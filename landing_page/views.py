@@ -10,17 +10,13 @@ from teachers.models import Teacher
 
 class LandingView(CreateView):
     template_name = "index.html"
-    # template_name = "coming_soon/landing.html"
     model = Subscribe
     fields = ['email']
     success_url = 'subscribe/'
 
+
 class SubscribeView(TemplateView):
     template_name = "subscribe.html"
-    # template_name = "coming_soon/landing.html"
-    # model = Subscribe
-    # fields = ['email']
-    # success_url = '/'
 
 
 class ClassView(ListView):

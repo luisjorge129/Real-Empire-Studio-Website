@@ -17,13 +17,3 @@ class Event(TimeStampedModel):
 
 	def __unicode__(self):
 		return name
-
-
-class Video(TimeStampedModel):
-	youtube_url = models.URLField()
-	name = models.CharField(max_length=100, blank=True)
-	description = models.TextField(blank=True)
-	status = models.BooleanField(default=True)
-
-	def __unicode__(self):
-		return name

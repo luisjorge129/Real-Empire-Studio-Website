@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^', include('landing_page.urls', namespace="landing")),
     url(r'^', include('teachers.urls', namespace="teachers")),
     url(r'^', include('events.urls', namespace="events")),
+    url(r'^', include('gallery.urls', namespace="gallery")),
 ]
