@@ -30,8 +30,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'tinymce',
+    
+    'imagekit',
+    'redactor',
 
     'core',
     'landing_page',
@@ -79,6 +80,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'real_empire_studio.wsgi.application'
 
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -103,3 +106,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
 )
+
+MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
+MEDIA_URL = '/media/'
+
+IMAGEKIT_CACHEFILE_DIR = 'versions'

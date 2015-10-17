@@ -29,7 +29,6 @@
                             <th class="numeric">Miercoles</th>
                             <th class="numeric">Jueves</th>
                             <th class="numeric">Viernes</th>
-                           
                           </tr>
                         </thead>
                         <tbody>
@@ -72,31 +71,26 @@
                             <td>11:00am</td>
                             <td colspan="2" data-title="Sabado">Lil' Hiphop (4-6 años)</td>
                             <td colspan="3" data-title="Maestra">Tatiana Perez</td>
-
                           </tr>
                              <tr>
                             <td  >12:00am</td>
                             <td colspan="2" data-title="Sabado">Hip hop kids (7-12 años)</td>
                             <td colspan="3" data-title="Maestra">Lilybeth Rodriguez</td>
-
                           </tr>
                           <tr>
                             <td>1:00am</td>
                             <td colspan="2" data-title="Sabado">Comercial (int)</td>
                             <td colspan="3" data-title="Maestro">Alexis Diaz</td>
-
                           </tr>
                              <tr>
                             <td  >2:00am</td>
                             <td colspan="2" data-title="Sabado">Master Class Swagg</td>
                             <td colspan="3" data-title="Maestro">Jefniel Estrada</td>
-
                           </tr>
                           <tr>
                             <td>3:00am</td>
                             <td colspan="2" data-title="Sabado">Principiante</td>
                             <td colspan="3" data-title="Sabado">Jefniel Estrada</td>
-
                           </tr>
                           </tr>
                           <tr>
@@ -111,7 +105,6 @@
                           </tr>
                         </tbody>
                       </table>
-
                     </div>
                 </div>
             </div>
@@ -123,7 +116,7 @@
               {% for teacher in teachers %}
                 <div class="col-xs-12 col-sm-4">
                   <a href="{% url 'teachers:teachers_detail' teacher.slug %}">
-                    <img src="{% static 'img/jaykob.jpg' %}" alt="Tatiana Maestra | Real Empire Studio" class="img-responsive img-circle">
+                    <img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle">
                     <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
                   </a>
                     <h5 style="font-family: 'Jura', sans-serif;"><span>Clase: </span>Hiphop principiante, Swagg style ó Krump</h5>

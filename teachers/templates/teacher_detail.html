@@ -26,11 +26,11 @@
          <div class="col-xs-10 col-xs-offset-1">
             <div class="panel panel-default panel-card">
               <div class="panel-heading">
-                  <img src="https://unsplash.imgix.net/12/barley.jpg?q=75&fm=jpg&s=f39de5ca1970a13dbe6af6c86b3c47ec" />
+                  <img src="https://unsplash.imgix.net/12/barley.jpg?q=75&fm=jpg&s=f39de5ca1970a13dbe6af6c86b3c47ec" alt="Background for {{ teacher.name }}" />
                   <!--<button class="btn btn-primary btn-sm" role="button"></button>-->
               </div>
               <div class="panel-figure">
-                  <img class="img-responsive img-circle" src="{% static 'img/jaykob.jpg' %}" />
+                  <img class="img-responsive img-circle" src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" />
               </div>
               <div class="panel-body">
                   <h3 class="panel-header text-center"><strong>{{ teacher.name }}</strong></h3>
@@ -40,18 +40,23 @@
               </div>
               <div class="text-center center-block social-box row">
                   {% if teacher.facebook %}
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                       <a href="{{ teacher.facebook }}" target="_blank"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                     </div>
                   {% endif %}
                   {% if teacher.twitter %}
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                       <a href="{{ teacher.twitter }}" target="_blank"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
                     </div>
                   {% endif %}
-                  {% if teacher.googleplus %}
-                    <div class="col-xs-4">                  
-                      <a href="{{ teacher.googleplus }}" target="_blank"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                  {% if teacher.google_plus %}
+                    <div class="col-xs-3">                  
+                      <a href="{{ teacher.google_plus }}" target="_blank"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                    </div>
+                  {% endif %}
+                  {% if teacher.instagram %}
+                    <div class="col-xs-3">                  
+                      <a href="{{ teacher.instagram }}" target="_blank"><i id="social-i" class="fa fa-instagram fa-3x social"></i></a>
                     </div>
                   {% endif %}
               </div>
