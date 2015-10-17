@@ -4,15 +4,18 @@
 <html lang="en">
 
 <head>
-    <meta name="google-site-verification" content="yuSvOOuW4FeMborHvXsLkYWK2gfh6YnSQ1X3RoeK394" />
      <meta name="viewport" content="width=device-width, initial-scale=1">
      
      {% block meta_description %}
-     <meta name="description" content="Academia de baile en Bayamón que cuenta con maestros y coreógrafos especializados en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar">
+     <meta name="description" content="Academia de baile que cuenta con maestros y coreógrafos especializados en diferentes estilos.">
      {% endblock %}
-
+     <meta name="google-site-verification" content="wQNoWvWWXdR_3zq8eSLtXf_CmF7ALGQ3oCty9HgQZ0E" />
      <meta name="Keywords" content="puertorico,bayamon,academia,baile,jazz,hiphop,hiphopkids,niños,student,masterclass,breakdance,funk,bailarines,bayamon,guaynabo,vegaalta,sanjuan,toaalta,pr,dace,real,empire,studio,art,entertainment,riohondo," />
-    <title>Real Empire Studio | Academia de Baile | {% block title %}{% endblock title %}</title>
+     <meta name="google-site-verification" content="wQNoWvWWXdR_3zq8eSLtXf_CmF7ALGQ3oCty9HgQZ0E" />
+     <meta name="google-site-verification" content="yuSvOOuW4FeMborHvXsLkYWK2gfh6YnSQ1X3RoeK394" />
+    <link rel="alternate" hreflang="es" href="http://www.realempirestudio.com/" />
+
+    <title>Real Empire Studio | Academia de Baile {% block title %}{% endblock title %}</title>
 
     <!-- Bootstrap Core CSS -->
      <link rel="shortcut icon" href="">
@@ -56,7 +59,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll no-border" href="#page-top">
-                    <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="" />
+                    <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
                 </a>
             </div>
 
@@ -97,51 +100,8 @@
     </section>
 
     <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
-
-    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'js/grayscale.js' %}"></script>
-
-    <script type="text/javascript">
-
-        $(".navbar-toggle").click(function(){
-            if($(".collapse").css("display") === "none"){
-                $(".collapse").slideDown();
-            }else
-                $(".collapse").slideUp();
-        });
-
-        $(function () {
-          var nua = navigator.userAgent
-          var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
-          if (isAndroid) {
-            $('select.form-control').removeClass('form-control').css('width', '100%')
-          }
-        }) 
-
-        // Copyright 2014-2015 Twitter, Inc.
-        // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-          var msViewportStyle = document.createElement('style')
-          msViewportStyle.appendChild(
-            document.createTextNode(
-              '@-ms-viewport{width:auto!important}'
-            )
-          )
-          document.querySelector('head').appendChild(msViewportStyle)
-        }
-    </script>
-
-    <script type="text/javascript">
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-49969090-3', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-    <script src="/../static/js/map.js"></script>-->
+    <script src="/../static/js/jquery.easing.min.js"></script>
+    <script src="/../static/js/grayscale.min.js"></script>
 
     {% block extra_bottom %}{% endblock extra_bottom %}
 </body>

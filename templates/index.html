@@ -1,28 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}
-	Pagina Principal
-{% endblock title %}
+{% block meta_description %}
+     <meta name="description" content="Academia de baile que cuenta con maestros y coreógrafos especializados en diferentes estilos.">
+{% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="col-md-8 col-md-offset-2" id="first-container">
+        <div class="col-md-8 col-md-offset-2" id="first-container" style="padding-top: 70px;">
             <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
-            <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
-            <p class="intro-text">Academia de baile en Puerto Rico localizada en Bayamón que cuenta con maestros y coreógrafos especializados en diferentes estilos.  Ofreciendo desarrollar tus talentos al máximo en un ambiente profesional y familiar.</u></p>
+            <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
+            <p class="intro-text">Pagina Principal de la Academia de baile Real Empire Studio, acedemia que cuenta con maestros y coreógrafos especializados en diferentes estilos.</u></p>
 
             <!-- END TIMER -->
-                <div class="text-center">
+                <div class="text-center row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" type="text/html" src="https://www.youtube.com/embed/awQ_N23JbFM"></iframe>
+                        </div>
+                    </div>
                     <div class="col-md-12">
-                        <h1><strong>Abierto Ya!!</strong></h1>
-                         <form action="{% url 'landing:landing_page' %}" method="post">
+                        <form action="{% url 'landing:landing_page' %}" method="post">
                             {% csrf_token %}
-                          <div class="input-group">
-                             <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
-                             <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
-                          </div>
-                         </form>
+                            <div class="input-group">
+                                <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
+                                <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div id="social-media">
@@ -41,12 +45,8 @@
     </div>
     <br/>
     <br/>
-    <br/>
 {% endblock content %}
 
 {% block extra_bottom %}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-   
-
 {% endblock %}
