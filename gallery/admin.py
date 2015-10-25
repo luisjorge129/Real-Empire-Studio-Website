@@ -8,13 +8,16 @@ from .models import GalleryCategory
 
 class VideoAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
-    fields = ('name', 'description', 'youtube_url',
+    fields = ('youtube_id', 'name', 'description',
     		  'category', 'status')
-    list_display = ('id', 'name', 'description', 'status',
+    list_display = ('id', 'youtube_id', 'name',
+                    'description', 'status',
     				'created_date', 'updated_date')
     list_display_links = ['id', 'name']
     list_filter = ['status']
-    search_fields = ['id', 'name']
+    search_fields = ['id', 'name',
+                     'youtube_id',
+                     'description']
 
 
 class GalleryAdmin(admin.ModelAdmin):
