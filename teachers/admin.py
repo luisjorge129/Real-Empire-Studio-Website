@@ -8,7 +8,8 @@ class TeacherAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
     fieldsets = (
                 ('Personal Information', {'fields':
-                        ('name', 'biography', 'image')}),
+                        ('name', 'slug', 'biography',
+                         'image', 'course')}),
                 ('Social Networks',
                     {'fields': ('facebook', 'twitter',
                                 'google_plus', 'instagram')}),

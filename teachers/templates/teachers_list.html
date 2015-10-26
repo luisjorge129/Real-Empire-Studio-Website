@@ -24,7 +24,14 @@
                     <img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle">
                     <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
                   </a>
-                    <h5 style="font-family: 'Jura', sans-serif;"><span>Clase: </span>Hiphop principiante, Swagg style ó Krump</h5>
+                    <h5 style="font-family: 'Jura', sans-serif;">
+                      {% if teacher.course.all %}
+                        <span>Clase: </span>
+                        {% for course in teacher.course.all %}{{ course }}{% if not forloop.last %} - {% endif %}{% endfor %}
+                      {% else %}
+                        <span>Clase:</span> Por anunciar.
+                      {% endif %}
+                    </h5>
                 </div>
               {% endfor %}
             </div>

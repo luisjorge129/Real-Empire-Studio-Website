@@ -8,8 +8,8 @@ class Video(TimeStampedModel):
     name = models.CharField(max_length=100, blank=True)
     youtube_id = models.CharField(max_length=20)
     description = models.TextField(blank=True)
-    category = models.ForeignKey('gallery.VideoCategory',
-                                 blank=True, null=True)
+    category = models.ManyToManyField('gallery.VideoCategory',
+                                      blank=True)
     status = models.BooleanField(default=True)
 
     def __unicode__(self):
@@ -19,8 +19,8 @@ class Video(TimeStampedModel):
 class Gallery(TimeStampedModel, Image):
     name = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
-    category = models.ForeignKey('gallery.GalleryCategory',
-                                 blank=True, null=True)
+    category = models.ManyToManyField('gallery.GalleryCategory',
+                                      blank=True)
     status = models.BooleanField(default=True)
 
     def __unicode__(self):
