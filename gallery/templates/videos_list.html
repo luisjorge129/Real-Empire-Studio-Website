@@ -22,10 +22,12 @@
 
       <h2 class="intro-text header-division">Videos</h2>
 
-      <p class="text-left" for="">Categorias: </label>
-      {% for category in categories_list %}
-        <a href="">{{ category.name }}</a>
-      {% endfor %}
+      {% if categories_list %}
+        <p class="text-left" for="">Categorias: </label>
+        {% for category in categories_list %}
+          <a href="">{{ category.name }}</a>
+        {% endfor %}
+      {% endif %}
       </p>
 
       <section>
