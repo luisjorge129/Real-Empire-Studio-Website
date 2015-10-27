@@ -79,6 +79,11 @@ TEMPLATES = [
     },
 ]
 
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 7,
+    'MARGIN_PAGES_DISPLAYED': 3,
+}
+
 WSGI_APPLICATION = 'real_empire_studio.wsgi.application'
 
 REDACTOR_OPTIONS = {'lang': 'en'}

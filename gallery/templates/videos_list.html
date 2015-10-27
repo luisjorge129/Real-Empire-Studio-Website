@@ -21,20 +21,32 @@
       <img id="real-empire-image" src="{% static 'img/realempire2.png' %}" alt="Real Empire Logo" />
 
       <h2 class="intro-text header-division">Videos</h2>
-      
+
+      <p class="text-left" for="">Categorias: </label>
+      {% for category in categories_list %}
+        <a href="">{{ category.name }}</a>
+      {% endfor %}
+      </p>
 
       <section>
          <div class="col-xs-12">
            <div class="row">
-             {% for video in videos %}
+             {% for video in page_obj.object_list %}
                   <div class="col-xs-12 col-sm-6 col-md-4 video-box">
                     <h4><strong>{{ video.name }}</strong></h3>
                     <div class="embed-responsive embed-responsive-16by9">
                       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ video.youtube_id }}?rel=0&html5=true" allowfullscreen></iframe>
                     </div>
                     <p>{{ video.description }}</p>
+                    <p>
+                      {% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+                    </p>
                   </div>
              {% endfor %}
+
+            <div class="col-xs-12">
+             {% include "pagination.html" %}
+            </div>
           </div>   
         </div>  
       </section>

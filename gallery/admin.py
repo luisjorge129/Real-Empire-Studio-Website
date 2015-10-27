@@ -18,6 +18,7 @@ class VideoAdmin(admin.ModelAdmin):
     search_fields = ['id', 'name',
                      'youtube_id',
                      'description']
+    filter_horizontal = ('category',) 
 
 
 class GalleryAdmin(admin.ModelAdmin):
@@ -29,6 +30,7 @@ class GalleryAdmin(admin.ModelAdmin):
     list_display_links = ['id', 'name']
     list_filter = ['status']
     search_fields = ['id', 'name']
+    filter_horizontal = ('category',) 
 
 
 class VideoCategoryAdmin(admin.ModelAdmin):
