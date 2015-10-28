@@ -2,11 +2,18 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
+import django_filters
 
 from .models import Video
 from .models import VideoCategory
 from .models import Gallery
 from .models import GalleryCategory
+
+
+class VideoFilter(django_filters.FilterSet):
+    class Meta:
+        model = Video
+        fields = ['category__name',]
 
 
 class VideoListView(ListView):
@@ -20,7 +27,8 @@ class VideoListView(ListView):
         except PageNotAnInteger:
             page = 1
 
-        objects = Video.objects.filter(status=True)
+        objects = VideoFilter(self.request.GET,
+                              queryset=Video.objects.filter(status=True))
 
         p = Paginator(objects, 12)
 
