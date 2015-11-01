@@ -1,14 +1,14 @@
 from django.contrib import admin
 
 from .models import Teacher
-from .models import Course
+from .models import Class
 
 
 class TeacherAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
     fieldsets = (
                 ('Personal Information', {'fields':
-                        ('name', 'slug', 'biography',
+                        ('name', 'biography',
                          'image', 'course')}),
                 ('Social Networks',
                     {'fields': ('facebook', 'twitter',
@@ -25,15 +25,23 @@ class TeacherAdmin(admin.ModelAdmin):
     search_fields = ['id', 'name', 'courses']
     filter_horizontal = ('course',) 
 
-class CourseAdmin(admin.ModelAdmin):
+
+class ClassAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
-    fields = ('name', 'time', 'status')
-    list_display = ('id', 'name', 'time', 'status',
+    fieldsets = (
+                ('Course Information', {'fields':
+                    ('name', ('day', 'start_time', 
+                'end_time'), 'status')}),
+                )
+    list_display = ('id', 'name', 'day',
+                    'start_time', 'end_time', 'status',
     				'created_date', 'updated_date')
-    list_display_links = ['id', 'name', 'time']
+    list_display_links = ['id', 'name', 'day',
+                          'start_time', 'end_time']
     list_filter = ['status']
-    search_fields = ['id', 'name']
+    search_fields = ['id', 'name',
+                     'start_time', 'end_time']
 
 
 admin.site.register(Teacher, TeacherAdmin)
-admin.site.register(Course, CourseAdmin)
+admin.site.register(Class, ClassAdmin)

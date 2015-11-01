@@ -16,18 +16,33 @@ class Teacher(TimeStampedModel, Image):
     twitter = models.URLField(blank=True)
     google_plus = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
-    course = models.ManyToManyField("teachers.Course")
+    course = models.ManyToManyField('teachers.Class')
     status = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.name
 
-class Course(TimeStampedModel):
+
+class Class(TimeStampedModel):
+    DAY_OF_THE_WEEK = (
+        ('Monday', 'Monday'),
+        ('Tuesday', 'Tuesday'),
+        ('Wednesday', 'Wednesday'),
+        ('Thursday', 'Thursday'),
+        ('Friday', 'Friday'),
+        ('Saturday', 'Saturday'), 
+        ('Sunday', 'Sunday'),
+    )
     name = models.CharField(max_length=150)
     slug = AutoSlugField(populate_from='name',
                          unique=True, max_length=50)
-    time = models.DateTimeField()
+    day = models.CharField(max_length=10,
+                           choices=DAY_OF_THE_WEEK)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    # teacher = models.ManyToManyField('teachers.Teacher')
     status = models.BooleanField(default=True)
     
     def __unicode__(self):
         return self.name
+    

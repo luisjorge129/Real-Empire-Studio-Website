@@ -5,6 +5,7 @@ from django.views.generic.list import ListView
 
 from .models import Subscribe
 from teachers.models import Teacher
+from teachers.models import Teacher
 # from .models import Class
 
 
@@ -17,12 +18,6 @@ class LandingView(CreateView):
 
 class SubscribeView(TemplateView):
     template_name = "subscribe.html"
-
-
-class ClassView(ListView):
-    model = Teacher
-    template_name = "class.html"
-    context_object_name = 'teachers'
 
 
 class PriceView(TemplateView):
