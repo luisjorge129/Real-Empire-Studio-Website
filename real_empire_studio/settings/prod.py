@@ -6,7 +6,7 @@ import dj_database_url
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'realempire_db',
+        'NAME': 'realempirev2_db',
         'USER': 'user',
         'PASS': 'pass',
     }
