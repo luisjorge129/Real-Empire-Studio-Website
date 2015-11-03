@@ -6,20 +6,20 @@ from .models import Class
 
 
 class TeachersListView(ListView):
-    model = Teacher
+    queryset = Teacher.objects.filter(status=True)
     template_name = "teachers_list.html"
     context_object_name = 'teachers'
 
 
 class TeachersDetailView(DetailView):
-    model = Teacher
+    queryset = Teacher.objects.filter(status=True)
     template_name = "teacher_detail.html"
     context_object_name = 'teacher'
     lookup_field = "slug"
 
 
 class ClassView(ListView):
-    model = Class
+    queryset = Class.objects.filter(status=True)
     template_name = "class.html"
     context_object_name = 'courses'
 
@@ -31,5 +31,4 @@ class ClassView(ListView):
         context['thursday_list'] = Class.objects.filter(status=True, day='Thursday')
         context['friday_list'] = Class.objects.filter(status=True, day='Friday')
         context['saturday_list'] = Class.objects.filter(status=True, day='Saturday')
-        # print context['saturday_list'].teachers
         return context

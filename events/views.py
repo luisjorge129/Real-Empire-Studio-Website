@@ -6,12 +6,12 @@ from .models import Event
 
 
 class EventsListView(ListView):
-	model = Event
+	queryset = Event.objects.filter(status=True)
 	template_name = "events_list.html"
 	context_object_name = "events"
 
 
 class EventsDetailView(DetailView):
-	model = Event
+	queryset = Event.objects.filter(status=True)
 	template_name = "events_detail.html"
 	context_object_name = "event"

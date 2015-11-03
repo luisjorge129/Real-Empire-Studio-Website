@@ -37,9 +37,13 @@
                                 <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
                                 <td>{{ course.name }}</td>
                                 <td>
-                                  {% for teacher in course.teacher_set.all %}
-                                    {{ teacher }}{% if not forloop.last %} - {% endif %}
-                                  {% endfor %}
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
                                 </td>
                                 <td></td>
                               </tr>
@@ -66,9 +70,13 @@
                                 <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
                                 <td>{{ course.name }}</td>
                                 <td>
-                                  {% for teacher in course.teacher_set.all %}
-                                    {{ teacher }}{% if not forloop.last %} - {% endif %}
-                                  {% endfor %}
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
                                 </td>
                               </tr>
                             {% endfor %}
@@ -94,9 +102,13 @@
                                 <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
                                 <td>{{ course.name }}</td>
                                 <td>
-                                  {% for teacher in course.teacher_set.all %}
-                                    {{ teacher }}{% if not forloop.last %} - {% endif %}
-                                  {% endfor %}
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
                                 </td>
                               </tr>
                             {% endfor %}
@@ -122,9 +134,13 @@
                                 <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
                                 <td>{{ course.name }}</td>
                                 <td>
-                                  {% for teacher in course.teacher_set.all %}
-                                    {{ teacher }}{% if not forloop.last %} - {% endif %}
-                                  {% endfor %}
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
                                 </td>
                               </tr>
                             {% endfor %}
@@ -150,9 +166,13 @@
                                 <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
                                 <td>{{ course.name }}</td>
                                 <td>
-                                  {% for teacher in course.teacher_set.all %}
-                                    {{ teacher }}{% if not forloop.last %} - {% endif %}
-                                  {% endfor %}
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
                                 </td>
                               </tr>
                             {% endfor %}
@@ -178,9 +198,13 @@
                                 <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
                                 <td>{{ course.name }}</td>
                                 <td>
-                                  {% for teacher in course.teacher_set.all %}
-                                    {{ teacher }}{% if not forloop.last %} - {% endif %}
-                                  {% endfor %}
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
                                 </td>
                               </tr>
                             {% endfor %}
