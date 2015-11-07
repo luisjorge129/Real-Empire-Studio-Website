@@ -420,7 +420,14 @@ margin-top:2px;
         font-size: 18px !important;
     }
 
+    .teachers-box > div{
+        height: auto!important;
+    }
 
+    .teachers-box > img{
+        height: auto!important;
+        max-height: 200px!important;
+    }
 }
 
 @media only screen and (max-device-width: 480px){

@@ -141,3 +141,28 @@ button.btn {
     margin-top: 200px;
     font-size: 115px;
 }
+
+
+@media only screen and (min-device-width: 1200px)  {
+
+}
+
+@media only screen and (min-device-width: 769px) and (max-device-width: 1200px)  {
+
+}
+
+@media only screen and (max-device-width: 768px){
+    .teachers-box > div{
+        height: auto!important;
+    }
+
+    .teachers-box > img{
+        height: auto!important;
+        max-height: 225px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-device-width: 480px){
+
+}
