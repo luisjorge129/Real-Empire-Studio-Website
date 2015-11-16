@@ -80,8 +80,8 @@ TEMPLATES = [
 ]
 
 PAGINATION_SETTINGS = {
-    'PAGE_RANGE_DISPLAYED': 7,
-    'MARGIN_PAGES_DISPLAYED': 3,
+    'PAGE_RANGE_DISPLAYED': 3,
+    'MARGIN_PAGES_DISPLAYED': 1,
 }
 
 WSGI_APPLICATION = 'real_empire_studio.wsgi.application'

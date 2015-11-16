@@ -145,3 +145,51 @@ button.btn {
 .pagination{
     font-size: 28px;
 }
+
+.video-box h4,
+.video-box p{
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.video-box h4{
+    font-size: 16px;
+    height: 33px;
+}
+
+.video-box p{
+    font-size: 14px;
+    height: 40px;
+}
+
+.video-box span{
+    margin-right: 1px;
+}
+
+.pagination{
+    font-size: 20px;
+}
+
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width: 0px) and (max-width : 767px) {
+    .pagination{
+        font-size: 14px;
+        float: left!important;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

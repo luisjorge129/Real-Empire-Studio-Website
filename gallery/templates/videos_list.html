@@ -22,16 +22,17 @@
 
       <h2 class="intro-text header-division">Videos</h2>
 
-      {% if categories_list %}
-        <p class="text-left" for="">Categorias: </label>
-        {% for category in categories_list %}
-          <a href="?category__name={{ category.name }}">{{ category.name }}</a>
-        {% endfor %}
-      {% endif %}
-      </p>
-
       <section>
          <div class="col-xs-12">
+          {% if categories_list %}
+            <p class="text-left" for="">Categorias: </label>
+              <a href="?category__name=" class="label label-primary">Todos</a>
+              {% for category in categories_list %}
+                <a href="?category__name={{ category.name }}" class="label label-primary">{{ category.name }}</a>
+              {% endfor %}
+            </p>
+          {% endif %}
+
            <div class="row">
              {% for video in page_obj.object_list %}
                   <div class="col-xs-12 col-sm-6 col-md-4 video-box">
@@ -41,7 +42,7 @@
                     </div>
                     <p>{{ video.description }}</p>
                     <p>
-                      {% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+                      <span>Categorias: </span>{% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
                     </p>
                   </div>
              {% endfor %}
