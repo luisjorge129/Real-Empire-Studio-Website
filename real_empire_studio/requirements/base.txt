@@ -4,7 +4,7 @@ django-autoslug==1.8.0
 django-imagekit==3.2.7
 django-pure-pagination==0.2.1
 django-wysiwyg-redactor==0.4.9
-django-filters==0.2.1
+django-filter==0.11.0
 dj-static==0.0.6
 gunicorn==19.3.0
 Markdown==2.6.2
