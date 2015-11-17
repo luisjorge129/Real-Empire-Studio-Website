@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
-import django_filters
+from django_filters import FilterSet
 
 from .models import Video
 from .models import VideoCategory
@@ -10,7 +10,7 @@ from .models import Gallery
 from .models import GalleryCategory
 
 
-class VideoFilter(django_filters.FilterSet):
+class VideoFilter(FilterSet):
     class Meta:
         model = Video
         fields = ['category__name',]
