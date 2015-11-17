@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     'imagekit',
     'redactor',
 
+    'django_filters',
     'core',
     'landing_page',
     'teachers',
