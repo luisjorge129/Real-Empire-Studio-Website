@@ -108,13 +108,14 @@ button.btn {
 
 
 .teachers-box > div{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .teachers-box h5{
     height: 58px;
     word-break: break-word;
+    font-size: 15px;
 }
 
 .teachers-box img{

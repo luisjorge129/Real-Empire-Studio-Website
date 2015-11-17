@@ -80,6 +80,7 @@ Image placeholders: placemi.com
 
 .panel-header{
     color: black;
+    word-break: break-word;
 }
 
 .panel-body-text{
