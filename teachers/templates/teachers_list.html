@@ -21,13 +21,13 @@
               {% for teacher in teachers %}
                 <div class="col-xs-12 col-sm-4">
                   <a href="{% url 'teachers:teachers_detail' teacher.slug %}">
-                    <img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle">
+                    <img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle text-center">
                     <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
                   </a>
                     <h5 style="font-family: 'Jura', sans-serif;">
                       {% if teacher.course.all %}
-                        <span>Clase: </span>
-                        {% for course in teacher.course.all %}{{ course }}{% if not forloop.last %} - {% endif %}{% endfor %}
+                        <span>Clase{{ teacher.course.all|pluralize }}: </span>
+                        {% for course in teacher.course.all %}<span class="label label-primary">{{ course }}</span>{% if not forloop.last %} - {% endif %}{% endfor %}
                       {% else %}
                         <span>Clase:</span> Por anunciar.
                       {% endif %}

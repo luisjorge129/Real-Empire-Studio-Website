@@ -8,15 +8,17 @@ from redactor.fields import RedactorField
 
 
 class Teacher(TimeStampedModel, Image):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=60)
     slug = AutoSlugField(populate_from='name',
                          unique=True, max_length=50)
-    biography = RedactorField(verbose_name=u'Text')
+    biography = RedactorField(verbose_name=u'Text',
+                              blank=True)
     facebook = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
     google_plus = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
-    course = models.ManyToManyField('teachers.Class')
+    course = models.ManyToManyField('teachers.Class',
+                                    blank=True)
     status = models.BooleanField(default=True)
 
     def __unicode__(self):
