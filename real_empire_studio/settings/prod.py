@@ -12,6 +12,10 @@ DATABASES = {
     }
 }
 
+INSTALLED_APPS += (
+    'storages',
+)
+
 ALLOWED_HOSTS = ['*']
 
 # Parse database configuration from $DATABASE_URL
@@ -22,6 +26,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
 
 
 def get_env_setting(setting):
