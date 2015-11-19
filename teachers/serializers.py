@@ -57,7 +57,7 @@ class TeacherSimpleSerializer(serializers.ModelSerializer):
 
 
 class ClassTeacherSerializer(serializers.ModelSerializer):
-    teacher = serializers.SerializerMethodField('get_teachers_list')
+    # teacher = serializers.SerializerMethodField('get_teachers_list')
     # teacher = TeacherSimpleSerializer(many=False, read_only=True)
 
     def get_teachers_list(self, course):
@@ -74,4 +74,4 @@ class ClassTeacherSerializer(serializers.ModelSerializer):
         model = Class
         fields = ('id', 'name', 'slug',
                   'day', 'start_time',
-                  'end_time', 'teacher')
+                  'end_time')
