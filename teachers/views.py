@@ -3,6 +3,39 @@ from django.views.generic.list import ListView
 
 from .models import Teacher
 from .models import Class
+from .serializers import TeacherSerializer
+from .serializers import ClassTeacherSerializer
+
+from rest_framework import generics
+from django_filters import FilterSet
+from rest_framework import filters
+
+class ApiTeacherListView(generics.ListAPIView):
+    queryset = Teacher.objects.filter(status=True)
+    serializer_class = TeacherSerializer
+    paginate_by = 0
+
+
+class ApiTeachersDetailView(generics.RetrieveAPIView):
+    queryset = Teacher.objects.filter(status=True)
+    serializer_class = TeacherSerializer
+    lookup_field = 'slug'
+
+
+class ClassFilter(FilterSet):
+    class Meta:
+        model = Class
+        fields = ['day',]
+
+
+class ApiClassList(generics.ListAPIView):
+    queryset = Class.objects.filter(status=True)
+    serializer_class = ClassTeacherSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = ClassFilter
+    paginate_by = 0
+    order_by = 'day'
+
 
 
 class TeachersListView(ListView):

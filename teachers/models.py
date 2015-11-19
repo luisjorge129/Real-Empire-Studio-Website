@@ -42,7 +42,6 @@ class Class(TimeStampedModel):
                            choices=DAY_OF_THE_WEEK)
     start_time = models.TimeField()
     end_time = models.TimeField()
-    # teacher = models.ManyToManyField('teachers.Teacher')
     status = models.BooleanField(default=True)
     
     def __unicode__(self):

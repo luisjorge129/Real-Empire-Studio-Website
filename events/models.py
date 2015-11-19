@@ -12,8 +12,6 @@ class Event(TimeStampedModel, Image):
     slug = AutoSlugField(populate_from='name',
                          unique=True, max_length=50)
     time = models.DateTimeField()
-    teacher = models.ManyToManyField('teachers.Teacher',
-                                     blank=True)
     status = models.BooleanField(default=True)
     facebook = models.URLField(blank=True)
     twitter = models.URLField(blank=True)

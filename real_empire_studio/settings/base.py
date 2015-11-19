@@ -33,8 +33,10 @@ INSTALLED_APPS = (
     
     'imagekit',
     'redactor',
-
-    'core',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'rest_framework',
+    
     'landing_page',
     'teachers',
     'events',
