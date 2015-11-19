@@ -18,5 +18,5 @@ urlpatterns = [
     	views.ApiTeachersDetailView.as_view(),
     	name='teachers_detail_api'),
     url(r'^api/clases/$', views.ApiClassList.as_view(),
-        name='class'),
+        name='class_list_api'),
 ]
