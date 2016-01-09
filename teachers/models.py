@@ -32,7 +32,7 @@ class Class(TimeStampedModel):
         ('Wednesday', 'Wednesday'),
         ('Thursday', 'Thursday'),
         ('Friday', 'Friday'),
-        ('Saturday', 'Saturday'), 
+        ('Saturday', 'Saturday'),
         ('Sunday', 'Sunday'),
     )
     name = models.CharField(max_length=150)
@@ -43,7 +43,21 @@ class Class(TimeStampedModel):
     start_time = models.TimeField()
     end_time = models.TimeField()
     status = models.BooleanField(default=True)
-    
+
     def __unicode__(self):
         return self.name
-    
+
+
+# class Price(TimeStampedModel):
+#     title = models.CharField(max_length=40)
+#     subtitle = models.CharField(max_length=20)
+#     information1 = models.CharField(max_length=40)
+#     information2 = models.CharField(max_length=40,
+#                                     blank=True)
+#     information3 = models.CharField(max_length=40,
+#                                     blank=True)
+#     information4 = models.CharField(max_length=40,
+#                                     blank=True)
+#
+#     def __unicode__(self):
+#         return self.title

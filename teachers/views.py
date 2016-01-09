@@ -1,8 +1,10 @@
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.views.generic import TemplateView
 
 from .models import Teacher
 from .models import Class
+# from .models import Price
 from .serializers import TeacherSerializer
 from .serializers import ClassTeacherSerializer
 
@@ -65,3 +67,7 @@ class ClassView(ListView):
         context['friday_list'] = Class.objects.filter(status=True, day='Friday')
         context['saturday_list'] = Class.objects.filter(status=True, day='Saturday')
         return context
+
+
+class PriceView(TemplateView):
+    template_name = "price.html"

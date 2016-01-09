@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://127.0.0.1:8000/apiv2/universities/2/?department=1 -->
+<html><head data-co-app="45" data-co-ubid="478a79ebb8a869ba7cb94a94a5e8ce34"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+    
+      
+      <meta name="robots" content="NONE,NOARCHIVE">
+    
+
+    <title>Django REST framework</title>
+
+    
+      
+        <link rel="stylesheet" type="text/css" href="./Django REST framework_files/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./Django REST framework_files/bootstrap-tweaks.css">
+      
+
+      <link rel="stylesheet" type="text/css" href="./Django REST framework_files/prettify.css">
+      <link rel="stylesheet" type="text/css" href="./Django REST framework_files/default.css">
+    
+
+  
+</head>
+
+
+<body class="" data-feedly-mini="yes" cz-shortcut-listen="true">
+
+  <div class="wrapper">
+    
+      <div class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+          <span>
+            
+              <a class="navbar-brand" rel="nofollow" href="http://www.django-rest-framework.org/">
+                  Django REST framework <span class="version">3.2.5</span>
+              </a>
+            
+          </span>
+          <ul class="nav navbar-nav pull-right">
+            
+              
+                <li class="dropdown">
+        <a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" class="dropdown-toggle" data-toggle="dropdown">
+            luisjorge129@gmail.com
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="http://127.0.0.1:8000/api/api-auth/logout/?next=/apiv2/universities/2/">Log out</a></li>
+        </ul>
+    </li>
+              
+            
+          </ul>
+        </div>
+      </div>
+    
+
+    <div class="container">
+      
+        <ul class="breadcrumb">
+          
+            
+              <li><a href="http://127.0.0.1:8000/apiv2/">Api Root</a></li>
+            
+          
+            
+              <li><a href="http://127.0.0.1:8000/apiv2/universities/">University List</a></li>
+            
+          
+            
+              <li class="active"><a href="http://127.0.0.1:8000/apiv2/universities/2/">University Instance</a></li>
+            
+          
+        </ul>
+      
+
+      <!-- Content -->
+      <div id="content">
+
+        
+          <form id="get-form" class="pull-right">
+            <fieldset>
+              
+                <div class="btn-group format-selection">
+                  <a class="btn btn-primary js-tooltip" href="./Django REST framework_files/Django REST framework.html" rel="nofollow" title="" data-original-title="Make a GET request on the University Instance resource">GET</a>
+
+                  <button class="btn btn-primary dropdown-toggle js-tooltip" data-toggle="dropdown" title="" data-original-title="Specify a format for the GET request">
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    
+                      <li>
+                        <a class="js-tooltip format-option" href="http://127.0.0.1:8000/apiv2/universities/2/?department=1&format=json" rel="nofollow" title="" data-original-title="Make a GET request on the University Instance resource with the format set to `json`">json</a>
+                      </li>
+                    
+                      <li>
+                        <a class="js-tooltip format-option" href="http://127.0.0.1:8000/apiv2/universities/2/?department=1&format=api" rel="nofollow" title="" data-original-title="Make a GET request on the University Instance resource with the format set to `api`">api</a>
+                      </li>
+                    
+                  </ul>
+                </div>
+              
+            </fieldset>
+          </form>
+        
+
+        
+          <form class="button-form" action="./Django REST framework_files/Django REST framework.html" method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken" value="O6meMNP81EiefrIKpvDswJusTW69I4SH">
+            <input type="hidden" name="_method" value="OPTIONS">
+            <button class="btn btn-primary js-tooltip" title="" data-original-title="Make an OPTIONS request on the University Instance resource">OPTIONS</button>
+          </form>
+        
+
+        
+
+          <div class="content-main">
+            <div class="page-header">
+                <h1>University Instance</h1>
+            </div>
+            <div style="float:left">
+              
+                <h2 id="retrieves-a-list-of-all-universities">Retrieves a list of all Universities</h2>
+<hr>
+<h4 id="1-search-values">1. Search Values</h4>
+<blockquote>
+<p>Search by university by name keyword</p>
+</blockquote>
+<ul>
+<li>
+<h4>Example:</h4>
+<ul>
+<li>
+<h5>Search by University Name: <a href="http://127.0.0.1:8000/apiv2/universities/2/?search=Universidad%20de%20Puerto%20Rico">?search=Universidad de Puerto Rico</a></h5>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="2-ordering-values">2. Ordering Values</h4>
+<blockquote>
+<p>Order universities by id, name or city</p>
+</blockquote>
+<ul>
+<li>
+<h4>Examples:</h4>
+<ul>
+<li>
+<h5>Ordering by id: <a href="http://127.0.0.1:8000/apiv2/universities/2/?ordering=id">?ordering=id</a></h5>
+</li>
+<li>
+<h5>Ordering by name: <a href="http://127.0.0.1:8000/apiv2/universities/2/?ordering=name">?ordering=name</a></h5>
+</li>
+<li>
+<h5>Ordering by city: <a href="http://127.0.0.1:8000/apiv2/universities/2/?ordering=city">?ordering=city</a></h5>
+</li>
+</ul>
+</li>
+</ul>
+<p>The API may also specify reverse orderings by prefixing the field name
+with '-', like so:</p>
+<ul>
+<li>
+<h5>Reverse ordering: <a href="http://127.0.0.1:8000/apiv2/universities/2/?ordering=id">?ordering=-name</a></h5>
+</li>
+</ul>
+<p>Multiple orderings may also be specified:</p>
+<ul>
+<li>
+<h5>Multiple ordering: <a href="http://127.0.0.1:8000/apiv2/universities/2/?ordering=name,city">?ordering=name,city</a></h5>
+</li>
+</ul>
+<hr>
+<h4 id="3-filters-values">3. Filters Values</h4>
+<blockquote>
+<p>Filters by name or city.</p>
+</blockquote>
+<ul>
+<li>
+<h4>Examples:</h4>
+<ul>
+<li>
+<h5>Filter by name: <a href="http://127.0.0.1:8000/apiv2/universities/2/?name=Universidad%20de%20Puerto%20Rico">?name=Universidad de Puerto Rico</a></h5>
+</li>
+<li>
+<h5>Filter by city: <a href="http://127.0.0.1:8000/apiv2/universities/2/?city=San%20Juan">?city=San Juan</a></h5>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="retrieve-university-by-id">Retrieve university by ID</h2>
+<hr>
+<h4 id="1-university-department-professor-list">1. University department professor list</h4>
+<blockquote>
+<p>Search professors from an university department </p>
+</blockquote>
+<ul>
+<li>
+<h4>Example:</h4>
+<ul>
+<li>
+<h5>Department id: <a href="./Django REST framework_files/Django REST framework.html">?department=1</a></h5>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+              
+            </div>
+
+            
+
+            <div class="request-info" style="clear: both">
+              <pre class="prettyprint"><b><span class="pln">GET</span></b><span class="pln"> </span><span class="pun">/</span><span class="pln">apiv2</span><span class="pun">/</span><span class="pln">universities</span><span class="pun">/</span><span class="lit">2</span><span class="pun">/?</span><span class="pln">department</span><span class="pun">=</span><span class="lit">1</span></pre>
+            </div>
+
+            <div class="response-info">
+              <pre class="prettyprint"><span class="meta nocode"><b>HTTP 200 OK</b>
+<b>Content-Type:</b> <span class="lit">application/json</span>
+<b>Vary:</b> <span class="lit">Accept</span>
+<b>Allow:</b> <span class="lit">GET, HEAD, OPTIONS</span>
+
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"UPRB"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"slug"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"uprb"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"city"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Bayamon"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"emblem"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"</span><a href="http://127.0.0.1:8000/apiv2/universities/2/static/uploaded_files/Screen%20Shot%202015-07-14%20at%208.31.14%20PM.png" rel="nofollow"><span class="str">http://127.0.0.1:8000/apiv2/universities/2/static/uploaded_files/Screen%20Shot%202015-07-14%20at%208.31.14%20PM.png</span></a><span class="str">"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"grade"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"professors_count"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"extra_info"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="str">"low_professors"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"url"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"</span><a href="http://127.0.0.1:8000/apiv2/professors/1/" rel="nofollow"><span class="str">http://127.0.0.1:8000/apiv2/professors/1/</span></a><span class="str">"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"first_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Luis"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"last_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"PErez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"slug"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"luis-perez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"gender"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"M"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"university"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"UPRB Bayamon"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"department"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ciencias de Computadora"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"score"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.25</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"grade"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"A"</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">],</span><span class="pln">
+        </span><span class="str">"hi_professors"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"url"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"</span><a href="http://127.0.0.1:8000/apiv2/professors/1/" rel="nofollow"><span class="str">http://127.0.0.1:8000/apiv2/professors/1/</span></a><span class="str">"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"first_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Luis"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"last_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"PErez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"slug"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"luis-perez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"gender"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"M"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"university"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"UPRB Bayamon"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"department"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ciencias de Computadora"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"score"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.25</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"grade"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"A"</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">],</span><span class="pln">
+        </span><span class="str">"recent_comments"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="str">"created_by"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Luis Perez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"body"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"El peorrrrróé"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"is_anonymous"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"responsibility"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"personality"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"workload"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"difficulty"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"created_at"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"22/11/2015 00:00"</span><span class="pln">
+            </span><span class="pun">},</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="str">"created_by"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Anonimo"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"body"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Hello Testssss"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"is_anonymous"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"responsibility"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"personality"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"workload"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"difficulty"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"created_at"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"21/11/2015 00:00"</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    </span><span class="str">"departments"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">"name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ciencias de Computadora"</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">"slug"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"ciencias-de-computadora"</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">"professors_count"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">"professors"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"url"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"</span><a href="http://127.0.0.1:8000/apiv2/professors/1/" rel="nofollow"><span class="str">http://127.0.0.1:8000/apiv2/professors/1/</span></a><span class="str">"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"first_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Luis"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"last_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"PErez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"slug"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"luis-perez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"gender"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"M"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"university"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"UPRB Bayamon"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"department"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ciencias de Computadora"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"score"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10.25</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"grade"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"A"</span><span class="pln">
+            </span><span class="pun">},</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"url"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"</span><a href="http://127.0.0.1:8000/apiv2/professors/2/" rel="nofollow"><span class="str">http://127.0.0.1:8000/apiv2/professors/2/</span></a><span class="str">"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"first_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Tatiana"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"last_name"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Perez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"slug"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"tatiana-perez"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"gender"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"F"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"university"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"UPRB Bayamon"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"department"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ciencias de Computadora"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"score"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"grade"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"F"</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+            </div>
+          </div>
+
+          
+
+            
+
+            
+          
+      </div><!-- /.content -->
+    </div><!-- /.container -->
+  </div><!-- ./wrapper -->
+
+  
+    <script src="./Django REST framework_files/jquery-1.8.1-min.js"></script>
+    <script src="./Django REST framework_files/bootstrap.min.js"></script>
+    <script src="./Django REST framework_files/prettify-min.js"></script>
+    <script src="./Django REST framework_files/default.js"></script>
+  
+
+<style type="text/css">
+@media print { #djDebug {display:none;}}
+</style>
+<link rel="stylesheet" href="./Django REST framework_files/toolbar.css" type="text/css">
+<script>//<![CDATA[
+if(!window.jQuery) document.write('<scr'+'ipt src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></scr'+'ipt>');
+//]]></script>
+<script src="./Django REST framework_files/toolbar.js"></script>
+<div id="djDebug" style="" dir="ltr" data-store-id="cb7d63d196784d1d8c67efd6acac1cd3" data-render-panel-url="/__debug__/render_panel/">
+	<div style="display: none; overflow: hidden;" id="djDebugToolbar">
+		<ul id="djDebugPanelList">
+			
+			<li><a id="djHideToolBarButton" href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Hide toolbar">Hide »</a></li>
+			
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtVersionsPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Versions" class="VersionsPanel">
+					
+					Versions
+					
+					
+						<br><small>Django 1.6.5</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtTimerPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Time" class="TimerPanel">
+					
+					Time
+					
+					
+						<br><small>CPU: 317.20ms (326.08ms)</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtSettingsPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Settings from &lt;code&gt;notaso.settings&lt;/code&gt;" class="SettingsPanel">
+					
+					Settings
+					
+					
+						
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtHeadersPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Headers" class="HeadersPanel">
+					
+					Headers
+					
+					
+						
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtRequestPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Request" class="RequestPanel">
+					
+					Request
+					
+					
+						<br><small>UniversityViewSet</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtSQLPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="SQL queries from 1 connection" class="SQLPanel">
+					
+					SQL
+					
+					
+						<br><small>17 queries in 5.14ms</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtStaticFilesPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Static files (183 found, 8 used)" class="StaticFilesPanel">
+					
+					Static files
+					
+					
+						<br><small>8 files used</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtTemplatesPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Templates (2 rendered)" class="TemplatesPanel">
+					
+					Templates
+					
+					
+						<br><small>rest_framework/api.html</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtCachePanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Cache calls from 1 backend" class="CachePanel">
+					
+					Cache
+					
+					
+						<br><small>0 calls in 0.00ms</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtSignalsPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Signals" class="SignalsPanel">
+					
+					Signals
+					
+					
+						<br><small>10 receivers of 12 signals</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtLoggingPanel" checked="checked" title="Disable for next and successive requests">
+					
+						<a href="http://127.0.0.1:8000/apiv2/universities/2/?department=1#" title="Log messages" class="LoggingPanel">
+					
+					Logging
+					
+					
+						<br><small>5 messages</small>
+					
+					
+					
+						</a>
+					
+				</li>
+			
+				<li class="djDebugPanelButton">
+					<input type="checkbox" data-cookie="djdtRedirectsPanel" title="Enable for next and successive requests">
+					
+						<div class="contentless disabled">
+					
+					Intercept redirects
+					
+					
+						</div>
+					
+				</li>
+			
+		</ul>
+	</div>
+	<div style="" id="djDebugToolbarHandle">
+		<span title="Show toolbar" id="djShowToolBarButton">«</span>
+	</div>
+	
+		
+			<div id="VersionsPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Versions</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="TimerPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Time</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="SettingsPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Settings from <code>notaso.settings</code></h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="HeadersPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Headers</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="RequestPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Request</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="SQLPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>SQL queries from 1 connection</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="StaticFilesPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Static files (183 found, 8 used)</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="TemplatesPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Templates (2 rendered)</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="CachePanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Cache calls from 1 backend</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="SignalsPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Signals</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+			<div id="LoggingPanel" class="panelContent" style="display: none;">
+				<div class="djDebugPanelTitle">
+					<a href="" class="djDebugClose">Close</a>
+					<h3>Log messages</h3>
+				</div>
+				<div class="djDebugPanelContent">
+					<img src="./Django REST framework_files/ajax-loader.gif" alt="loading" class="loader">
+					<div class="scroll">
+						
+					</div>
+				</div>
+			</div>
+		
+	
+		
+	
+	<div id="djDebugWindow" class="panelContent" style="display: none;"></div>
+</div>
+
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script><div></div></body></html>
