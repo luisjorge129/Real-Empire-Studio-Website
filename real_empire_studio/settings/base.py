@@ -30,13 +30,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'imagekit',
     'redactor',
     'rest_framework.authtoken',
     'corsheaders',
     'rest_framework',
-    
+
     'landing_page',
     'teachers',
     'events',
