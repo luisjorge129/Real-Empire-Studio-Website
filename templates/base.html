@@ -65,11 +65,8 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav  col-md-8">
+                <ul class="nav navbar-nav col-md-10 col-lg-8">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
                         <li class="page-scroll">
                             <a href="{% url 'landing:landing_page' %}">Pagina Principal</a>
                         </li>
@@ -83,7 +80,7 @@
                             <a href="{% url 'teachers:price' %}">Precios</a>
                         </li>
                         <li class="page-scroll">
-                        <a href="{% url 'events:events_list' %}">Eventos</a>
+                          <a href="{% url 'events:events_list' %}">Eventos</a>
                         </li>
                         <li class="page-scroll">
                             <a href="{% url 'gallery:video_list' %}">Videos</a>
