@@ -12,6 +12,8 @@ DATABASES = {
     }
 }
 
+DEBUG = True
+
 INSTALLED_APPS += (
     'storages',
 )
