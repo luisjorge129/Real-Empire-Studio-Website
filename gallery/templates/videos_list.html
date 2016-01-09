@@ -42,7 +42,9 @@
                     </div>
                     <p>{{ video.description }}</p>
                     <p>
+											{% if video.category.all %}
                       <span>Categorias: </span>{% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+											{% endif %}
                     </p>
                   </div>
              {% endfor %}
@@ -50,8 +52,8 @@
             <div class="col-xs-12">
              {% include "pagination.html" %}
             </div>
-          </div>   
-        </div>  
+          </div>
+        </div>
       </section>
     </div>
 </div>
@@ -62,8 +64,8 @@
     $(document).ready(function() {
       $(".btn-pref .btn").click(function () {
           $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
-          // $(".tab").addClass("active"); // instead of this do the below 
-          $(this).removeClass("btn-default").addClass("btn-primary");   
+          // $(".tab").addClass("active"); // instead of this do the below
+          $(this).removeClass("btn-default").addClass("btn-primary");
       });
     });
   </script>
