@@ -1,5 +1,5 @@
 bootstrap-admin==0.3.6
-Django==1.8.5
+Django==1.8.6
 django-autoslug==1.8.0
 django-imagekit==3.2.7
 django-pure-pagination==0.2.1
