@@ -18,7 +18,7 @@
     <title>Real Empire Studio | Academia de Baile {% block title %}{% endblock title %}</title>
 
     <!-- Bootstrap Core CSS -->
-     <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="">
     <!-- Fonts -->
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
@@ -62,33 +62,31 @@
                     <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
                 </a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav col-md-10 col-lg-8">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/' %}active{% endif %}">
                             <a href="{% url 'landing:landing_page' %}">Pagina Principal</a>
                         </li>
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/clases/' %}active{% endif %}">
                             <a href="{% url 'teachers:class' %}">Clases</a>
                         </li>
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/maestros/' %}active{% endif %}">
                             <a href="{% url 'teachers:teachers_list' %}">Maestros</a>
                         </li>
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/precios/' %}active{% endif %}">
                             <a href="{% url 'teachers:price' %}">Precios</a>
                         </li>
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/eventos/' %}active{% endif %}">
                           <a href="{% url 'events:events_list' %}">Eventos</a>
                         </li>
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/videos/' %}active{% endif %}">
                             <a href="{% url 'gallery:video_list' %}">Videos</a>
                         </li>
-                        <li class="page-scroll">
+                        <li class="page-scroll {% if request.get_full_path == '/contactano/' %}active{% endif %}">
                             <a href="{% url 'landing:contact' %}">Contactanos</a>
                         </li>
-
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -105,7 +103,7 @@
 
     <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
     <script src="{% static 'js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'js/grayscale.min.js' %}"></script>
+    <script src="{% static 'js/grayscale.js' %}"></script>
 
     {% block extra_bottom %}{% endblock extra_bottom %}
 </body>

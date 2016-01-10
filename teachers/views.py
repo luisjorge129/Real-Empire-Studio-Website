@@ -12,6 +12,7 @@ from rest_framework import generics
 from django_filters import FilterSet
 from rest_framework import filters
 
+
 class ApiTeacherListView(generics.ListAPIView):
     queryset = Teacher.objects.filter(status=True)
     serializer_class = TeacherSerializer

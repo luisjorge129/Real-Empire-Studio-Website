@@ -80,7 +80,6 @@ a:focus {
     transition: background .3s ease-in-out;
     color:white;
     font-size: 14px;
-
 }
 
 .navbar-custom .nav li a:hover,
