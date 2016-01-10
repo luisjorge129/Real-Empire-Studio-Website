@@ -6,7 +6,7 @@ from .models import Teacher
 from .models import Class
 # from .models import Price
 from .serializers import TeacherSerializer
-from .serializers import ClassTeacherSerializer
+from .serializers import ClassSerializer
 
 from rest_framework import generics
 from django_filters import FilterSet
@@ -33,7 +33,7 @@ class ClassFilter(FilterSet):
 
 class ApiClassList(generics.ListAPIView):
     queryset = Class.objects.filter(status=True)
-    serializer_class = ClassTeacherSerializer
+    serializer_class = ClassSerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ClassFilter
     page_size = 0

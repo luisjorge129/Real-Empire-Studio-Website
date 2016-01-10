@@ -4,13 +4,32 @@ from .models import Class
 from rest_framework import serializers
 
 
+class TeacherSimpleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Teacher
+        fields = ('id', 'name', 'slug')
+
+
 class ClassSerializer(serializers.ModelSerializer):
+    teachers = serializers.SerializerMethodField('get_teachers_list')
+
+    def get_teachers_list(self, course):
+        try:
+            if course:
+              queryset = Teacher.objects.filter(status=True,
+                                                course__pk=course.pk)
+              serializer = TeacherSimpleSerializer(instance=queryset,
+                                                   many=True)
+              return serializer.data
+        except Teacher.DoesNotExist:
+            return None
 
     class Meta:
         model = Class
         fields = ('id', 'name', 'slug',
                   'day', 'start_time',
-                  'end_time')
+                  'end_time', 'teachers')
 
 
 class TeacherSerializer(serializers.ModelSerializer):
@@ -47,31 +66,3 @@ class TeacherSerializer(serializers.ModelSerializer):
                   'facebook',  'twitter',
                   'google_plus', 'instagram',
                   'course')
-
-
-class TeacherSimpleSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Teacher
-        fields = ('id', 'name', 'slug')
-
-
-class ClassTeacherSerializer(serializers.ModelSerializer):
-    # teacher = serializers.SerializerMethodField('get_teachers_list')
-    # teacher = TeacherSimpleSerializer(many=False, read_only=True)
-
-    def get_teachers_list(self, course):
-        try:
-            if course:
-              queryset = Teacher.objects.filter(status=True,
-                                                course=course.pk)
-              serializer = TeacherSimpleSerializer(instance=queryset)
-              return serializer.data
-        except Teacher.DoesNotExist:
-            return None
-
-    class Meta:
-        model = Class
-        fields = ('id', 'name', 'slug',
-                  'day', 'start_time',
-                  'end_time')
