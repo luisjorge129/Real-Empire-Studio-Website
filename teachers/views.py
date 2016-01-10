@@ -15,7 +15,7 @@ from rest_framework import filters
 class ApiTeacherListView(generics.ListAPIView):
     queryset = Teacher.objects.filter(status=True)
     serializer_class = TeacherSerializer
-    paginate_by = 0
+    page_size = 0
 
 
 class ApiTeachersDetailView(generics.RetrieveAPIView):
@@ -35,7 +35,7 @@ class ApiClassList(generics.ListAPIView):
     serializer_class = ClassTeacherSerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ClassFilter
-    paginate_by = 0
+    page_size = 0
     order_by = 'day'
 
 
