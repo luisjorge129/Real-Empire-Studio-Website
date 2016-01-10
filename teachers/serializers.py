@@ -13,6 +13,10 @@ class TeacherSimpleSerializer(serializers.ModelSerializer):
 
 class ClassSerializer(serializers.ModelSerializer):
     teachers = serializers.SerializerMethodField('get_teachers_list')
+    start_time = serializers.TimeField(format='%-I:%M%p',
+                                       required=False, read_only=True)
+    end_time = serializers.TimeField(format='%-I:%M%p',
+                                      required=False, read_only=True)
 
     def get_teachers_list(self, course):
         try:
