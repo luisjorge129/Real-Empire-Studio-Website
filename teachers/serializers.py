@@ -1,3 +1,5 @@
+from datetime import date
+
 from .models import Teacher
 from .models import Class
 
@@ -13,10 +15,19 @@ class TeacherSimpleSerializer(serializers.ModelSerializer):
 
 class ClassSerializer(serializers.ModelSerializer):
     teachers = serializers.SerializerMethodField('get_teachers_list')
-    start_time = serializers.TimeField(format='%-I:%M%p',
+    start_time = serializers.TimeField(format='%-I:%M',
                                        required=False, read_only=True)
-    end_time = serializers.TimeField(format='%-I:%M%p',
-                                      required=False, read_only=True)
+    start_time_end = serializers.SerializerMethodField()
+    end_time = serializers.TimeField(format='%-I:%M',
+                                     required=False, read_only=True)
+
+    end_time_end = serializers.SerializerMethodField()
+
+    def get_start_time_end(self, course):
+        return course.start_time.strftime('%p')
+
+    def get_end_time_end(self, course):
+        return course.end_time.strftime('%p')
 
     def get_teachers_list(self, course):
         try:
@@ -33,7 +44,9 @@ class ClassSerializer(serializers.ModelSerializer):
         model = Class
         fields = ('id', 'name', 'slug',
                   'day', 'start_time',
-                  'end_time', 'teachers')
+                  'start_time_end',
+                  'end_time', 'end_time_end',
+                  'teachers')
 
 
 class TeacherSerializer(serializers.ModelSerializer):
