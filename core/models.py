@@ -36,6 +36,6 @@ class Image(models.Model):
     image_large = ImageSpecField(source='image',
                                  processors=[ResizeToFill(800, 800)],
                                  format='JPEG', options={'quality': 60})
-    
+
     class Meta:
     	abstract = True

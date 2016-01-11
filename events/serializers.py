@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 
 class EventListSerializer(serializers.ModelSerializer):
-    time = serializers.DateTimeField(format='%d/%m/%Y %H:%M',
+    time = serializers.DateTimeField(format='%d/%m/%Y %-I:%M%p',
                                      required=False, read_only=True)
     image_thumbnail = serializers.SerializerMethodField('get_image_thumbnail_url')
     image_small = serializers.SerializerMethodField('get_image_small_url')
