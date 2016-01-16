@@ -43,9 +43,9 @@
                   </div>
                   <div class="social-events">
                     <ul>
-                      {% if event.facebook %}<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>{% endif %}
-                      {% if event.twitter %}<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>{% endif %}
-                      {% if event.google_plus %}<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>{% endif %}
+                      {% if event.facebook %}<li class="facebook" style="width:33%;"><a target="_blank" href="{{event.facebook}}"><span class="fa fa-facebook"></span></a></li>{% endif %}
+                      {% if event.twitter %}<li class="twitter" style="width:34%;"><a target="_blank" href="{{event.twitter}}"><span class="fa fa-twitter"></span></a></li>{% endif %}
+                      {% if event.google_plus %}<li class="google-plus" style="width:33%;"><a target="_blank" href="{{ event.google_plus }}"><span class="fa fa-google-plus"></span></a></li>{% endif %}
                     </ul>
                   </div>
                 </li>
