@@ -19,12 +19,47 @@
       <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
       <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
 
-      <h2 class="intro-text">Evento - {{ event.name }}</h2>
+      <h2 class="intro-text">Evento</h2>
 
       <section>
          <div class="col-xs-10 col-xs-offset-1">
-           
-          </div>  
+           <ul class="event-list">
+                <li style="border-radius: 20px; box-shadow: 4px 4px 4px #333;">
+                  <div class="info" style="height: auto!important;">
+                    <h4 class="title text-center"><strong>Evento:</strong> {{ event.name }}</h4>
+                    <p class="text-center" datetime="{{ event.time|date:'y-m-d' }}">
+                      <strong>Fecha: </strong>
+                        <span class="day">{{ event.time|date:'d' }}</span> de
+                        <span class="month">{{ event.time|date:'F' }}</span> de
+                        <span class="year">{{ event.time|date:'Y' }}</span>
+                    </p>
+                    <p class="text-center" datetime="{{ event.time|date:'y-m-d' }}">
+                      <strong>Horario: </strong><span class="time">{{ event.time|date:'g:iA' }}</span>
+                    </p>
+                    <hr/>
+                    {% if event.image %}
+                    <p style="text-align:center;">
+                      <img alt="{{ event.slug }}" src="{{ event.image_medium.url }}" style="vertical-align:middle;"/>
+                    </p>
+                    {% endif %}
+                    <p class="desc" style="margin: 20px 0px;"><strong>Descripción: </strong>{{ event.description|truncatechars:104 }}</p>
+                  </div>
+                  <div class="social-events">
+                    <ul>
+                      {% if event.facebook %}<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>{% endif %}
+                      {% if event.twitter %}<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>{% endif %}
+                      {% if event.google_plus %}<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>{% endif %}
+                    </ul>
+                  </div>
+                </li>
+            </ul>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </section>
       </div>
   </div>

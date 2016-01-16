@@ -35,16 +35,24 @@ background-color: rgb(165, 82, 167);
 display: none;
 }
 .event-list > li > time > .day {
-display: block;
-font-size: 47pt;
-font-weight: 100;
-line-height: 1;
+    display: block;
+    font-size: 34pt;
+    font-weight: 100;
+    line-height: 1;
 }
 .event-list > li time > .month {
-display: block;
-font-size: 24pt;
-font-weight: 900;
-line-height: 1;
+	display: block;
+    font-size: 17pt;
+    line-height: 1;
+}
+.event-list > li time > .year {
+	display: block;
+    font-size: 14pt;
+}
+.event-list > li time > .time {
+	display: block;
+    font-size: 12pt;
+    font-weight: 900;
 }
 .event-list > li > img {
 width: 100%;

@@ -36,9 +36,9 @@
                   {% if event.image %}<img alt="{{ event.name }}" src="{{ event.image_medium.url }}" />{% endif %}
                   <div class="info">
                     <h2 class="title">{{ event.name }}</h2>
-                    <p class="desc">{{ event.description }}</p>
+                    <p class="desc">{{ event.description|truncatechars:104 }}</p>
                     <ul>
-                      <!--<li style="width:100%;"><a href="{% url 'events:events_detail' event.slug %}"><span class="fa fa-globe"></span> Leer mas información</a></li>-->
+                      <li style="width:100%;"><a href="{% url 'events:events_detail' event.slug %}"><span class="fa fa-globe"></span> Leer mas información</a></li>
                     </ul>
                   </div>
                   <div class="social-events">
