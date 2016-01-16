@@ -27,7 +27,7 @@
             <h4 class="title text-center"><strong>Evento:</strong> {{ event.name }}</h4>
             <p class="text-center" datetime="{{ event.time|date:'y-m-d' }}">
               <strong>Fecha: </strong>
-                <span class="day">{{ event.time|date:'d' }}</span> de
+                <span class="day">{{ event.time|date:'j' }}</span> de
                 <span class="month">{{ event.time|date:'F' }}</span> de
                 <span class="year">{{ event.time|date:'Y' }}</span>
             </p>

@@ -28,7 +28,7 @@
               {% for event in events %}
                 <li>
                   <time datetime="{{ event.time|date:'y-m-d' }}">
-                    <span class="day">{{ event.time|date:'d' }}</span>
+                    <span class="day">{{ event.time|date:'j' }}</span>
                     <span class="month">{{ event.time|date:'M' }}</span>
                     <span class="year">{{ event.time|date:'Y' }}</span>
                     <span class="time">{{ event.time|date:'g:iA' }}</span>
