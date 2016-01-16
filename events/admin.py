@@ -8,8 +8,9 @@ class EventAdmin(admin.ModelAdmin):
     fields = ('name', 'description', 'time',
     		  'image', 'facebook', 'twitter',
     		  'google_plus', 'status')
-    list_display = ('id', 'name', 'description', 'time',
-    				'status', 'created_date', 'updated_date')
+    list_display = ('id', 'name', 'time',
+    				'status', 'created_date',
+                    'updated_date')
     list_display_links = ['id', 'name', 'time']
     list_filter = ['status']
     search_fields = ['id', 'name',
