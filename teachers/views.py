@@ -61,12 +61,18 @@ class ClassView(ListView):
 
     def get_context_data(self, **kwargs):
         context = {}
-        context['monday_list'] = Class.objects.filter(status=True, day='Monday')
-        context['tuesday_list'] = Class.objects.filter(status=True, day='Tuesday')
-        context['wednesday_list'] = Class.objects.filter(status=True, day='Wednesday')
-        context['thursday_list'] = Class.objects.filter(status=True, day='Thursday')
-        context['friday_list'] = Class.objects.filter(status=True, day='Friday')
-        context['saturday_list'] = Class.objects.filter(status=True, day='Saturday')
+        context['monday_list'] = Class.objects.filter(
+            status=True, day='Monday').order_by('start_time')
+        context['tuesday_list'] = Class.objects.filter(
+            status=True, day='Tuesday').order_by('start_time')
+        context['wednesday_list'] = Class.objects.filter(
+            status=True, day='Wednesday').order_by('start_time')
+        context['thursday_list'] = Class.objects.filter(
+            status=True, day='Thursday').order_by('start_time')
+        context['friday_list'] = Class.objects.filter(
+            status=True, day='Friday').order_by('start_time')
+        context['saturday_list'] = Class.objects.filter(
+            status=True, day='Saturday').order_by('start_time')
         return context
 
 
