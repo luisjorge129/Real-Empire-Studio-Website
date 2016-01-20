@@ -1,5 +1,4 @@
 media/*
-migrations/
 realempire_db
 *.pyc
 

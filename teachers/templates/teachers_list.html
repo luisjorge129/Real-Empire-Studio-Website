@@ -21,7 +21,7 @@
               {% for teacher in teachers %}
                 <div class="col-xs-12 col-sm-4">
 									{% if teacher.biography %}
-                  	<a href="{% url 'teachers:teachers_detail' teacher.slug %}">
+                  	<a href="{% url 'teachers:teachers_detail' teacher.slug %}" style="color: white">
 											<img src="{{ teacher.image_medium.url }}" alt="{{ teacher.name }} Potrait" class="img-responsive img-circle text-center">
 	                    <h5 style="font-family: 'Jura', sans-serif;"><span>Maestro: </span>{{ teacher.name }}</h5>
 	                  </a>
