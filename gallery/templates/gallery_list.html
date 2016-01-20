@@ -2,35 +2,104 @@
 {% load static %}
 
 {% block title %}
-	Maestro - {{ teacher.name }}
+  Fotos de la academia
 {% endblock title %}
 
 {% block extra_head %}
   <link rel="stylesheet" href="{% static 'css/teachers.css'%}">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'vendor/css/blueimp-gallery.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/css/bootstrap-image-gallery.min.css' %}">
 {% endblock extra_head %}
 
 {% block meta_description %}
-  <meta name="description" content="Horarios, clases y maestros que ofrece la Academia de baile Real Empire Studio Puerto Rico Bayamón, esta academia cuenta con maestros y coreógrafos especializados en diferentes estilos.">
+  <meta name="description" content="Galleria de imagenes de la academia Real Empire Studio, esta academia cuenta con maestros y coreógrafos especializados en diferentes estilos.">
 {% endblock %}
 
 {% block content %}
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2" id="first-container">
+    <div class="col-xs-12 col-md-10 col-md-offset-1" id="first-container">
       <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
-      <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="" />
+      <img id="real-empire-image" src="{% static 'img/realempire2.png' %}" alt="Real Empire Logo" />
 
-      <h2 class="intro-text">Galleria de Imagenes</h2>
+      <h1 class="intro-text header-division">Fotos</h1>
 
       <section>
-         <div class="col-xs-10 col-xs-offset-1">
-            <div class="panel panel-default panel-card">
-             
-            </div>   
-          </div>  
-        </section>
-      </div>
-  </div>
+         <div class="col-xs-12">
+          {% if categories_list %}
+            <p class="text-left" for="">Categorias: </label>
+              <a href="?category__name=" class="label label-primary">Todas</a>
+              {% for category in categories_list %}
+                <a href="?category__name={{ category.name }}" class="label label-primary">{{ category.name }}</a>
+              {% endfor %}
+            </p>
+          {% endif %}
+
+           <div class="row" id="links">
+             {% for gallery in page_obj.object_list %}
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 video-box">
+                    <h4><strong>{{ gallery.name }}</strong></h4>
+                    <a href="{{ gallery.image.url }}" title="{{ gallery.name }}" data-gallery>
+                      <img class="img-responsive img-thumbnail" src="{{ gallery.image_large.url }}" />
+                    </a>
+                    <p>{{ gallery.description }}</p>
+                    <p>
+                      {% if gallery.category.all %}
+                      <span>Categorias: </span>{% for category in gallery.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+                      {% endif %}
+                    </p>
+                  </div>
+             {% endfor %}
+
+            <div class="col-xs-12">
+             {% include "pagination.html" %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body next"></div>
+                    <div class="modal-footer">
+                        <div class="row">
+                          <div class="col-sm-6 text-left">
+                            <button type="button" class="btn btn-default prev" style="height: 40px;">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Previous
+                            </button>
+                          </div>
+                          <div class="col-sm-6 text-right">
+                            <button type="button" class="btn btn-primary next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
 {% block extra_bottom %}
@@ -43,4 +112,6 @@
       });
     });
   </script>
+  <script src="{% static 'vendor/js/jquery.blueimp-gallery.min.js' %}"></script>
+  <script src="{% static 'vendor/js/bootstrap-image-gallery.min.js' %}"></script>
 {% endblock extra_bottom %}

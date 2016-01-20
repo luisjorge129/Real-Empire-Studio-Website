@@ -99,7 +99,7 @@ input.btn.btn-lg:focus {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-button.btn {
+button.btn-landing {
     width: 40%;
     height: 60px;
     border-top-left-radius: 0;
