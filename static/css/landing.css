@@ -190,6 +190,9 @@ button.btn-landing {
         font-size: 14px;
         float: left!important;
     }
+    .gallery-box{
+        max-height: 334px;
+    }
 }
 
 /* Small Devices, Tablets */
