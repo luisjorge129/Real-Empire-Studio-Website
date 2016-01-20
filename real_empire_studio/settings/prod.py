@@ -41,8 +41,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-DEBUG = True
-
 def get_env_setting(setting):
     """ Get the environment setting or return exception """
     try:
