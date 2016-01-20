@@ -26,14 +26,14 @@ class GalleryFilter(FilterSet):
 
 
 class ApiVideoList(generics.ListAPIView):
-    queryset = Video.objects.filter(status=True)
+    queryset = Video.objects.filter(status=True).order_by('-id')
     serializer_class = VideoListSerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = VideoFilter
 
 
 class ApiGalleryList(generics.ListAPIView):
-    queryset = Gallery.objects.filter(status=True)
+    queryset = Gallery.objects.filter(status=True).order_by('-id')
     serializer_class = GalleryListSerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = GalleryFilter
@@ -51,7 +51,8 @@ class VideoListView(ListView):
             page = 1
 
         objects = VideoFilter(self.request.GET,
-                              queryset=Video.objects.filter(status=True))
+                              queryset=Video.objects.filter(
+                                status=True).order_by('-id'))
 
         p = Paginator(objects, 12)
 
@@ -82,7 +83,8 @@ class GalleryListView(ListView):
             page = 1
 
         objects = GalleryFilter(self.request.GET,
-                                queryset=Gallery.objects.filter(status=True))
+                                queryset=Gallery.objects.filter(
+                                    status=True).order_by('-id'))
 
         p = Paginator(objects, 12)
 
