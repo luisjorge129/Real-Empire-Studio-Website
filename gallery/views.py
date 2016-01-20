@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic.list import ListView
 
 from pure_pagination import Paginator, PageNotAnInteger
@@ -10,13 +9,12 @@ from .serializers import VideoListSerializer
 from .models import Video
 from .models import VideoCategory
 from .models import Gallery
-from .models import GalleryCategory
 
 
 class VideoFilter(FilterSet):
     class Meta:
         model = Video
-        fields = ['category__name',]
+        fields = ['category__name', ]
 
 
 class ApiVideoList(generics.ListAPIView):
@@ -45,7 +43,6 @@ class VideoListView(ListView):
         page_obj = p.page(page)
 
         categories = VideoCategory.objects.all()
-
 
         context = {
             'page_obj': page_obj,

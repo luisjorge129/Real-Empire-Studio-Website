@@ -5,8 +5,13 @@ from core.models import Image
 
 
 class Video(TimeStampedModel):
+    VIDEO_TYPE = (
+        ('Facebook', 'Facebook'),
+        ('Youtube', 'Youtube'),
+    )
     name = models.CharField(max_length=40, blank=True)
-    youtube_id = models.CharField(max_length=20)
+    video_id = models.CharField(max_length=20)
+    video_type = models.CharField(max_length=16, choices=VIDEO_TYPE)
     description = models.CharField(blank=True, max_length=50)
     category = models.ManyToManyField('gallery.VideoCategory',
                                       blank=True)

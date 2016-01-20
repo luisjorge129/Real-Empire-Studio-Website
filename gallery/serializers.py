@@ -7,7 +7,7 @@ from rest_framework import serializers
 class VideoCategorySerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Video
+        model = VideoCategory
         fields = ('id', 'name')
 
 
@@ -16,7 +16,5 @@ class VideoListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Video
-        fields = ('id', 'name', 'youtube_id',
-        		  'description', 'category', 'status')
-
-
+        fields = ('id', 'name', 'video_id', 'video_type',
+                  'description', 'category', 'status')

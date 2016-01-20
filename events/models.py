@@ -10,7 +10,7 @@ from core.models import Image
 class Event(TimeStampedModel, Image):
     name = models.CharField(max_length=100)
     description = RedactorField(verbose_name=u'Text',
-                              blank=True)
+                                blank=True)
     slug = AutoSlugField(populate_from='name',
                          unique=True, max_length=50)
     time = models.DateTimeField()

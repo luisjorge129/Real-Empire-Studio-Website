@@ -1,8 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.views.generic import ListView
 
-from .models import Price
 
 def handler404(request):
     response = render_to_response('404.html', {},

@@ -1,5 +1,3 @@
-from datetime import date
-
 from .models import Teacher
 from .models import Class
 
@@ -32,11 +30,11 @@ class ClassSerializer(serializers.ModelSerializer):
     def get_teachers_list(self, course):
         try:
             if course:
-              queryset = Teacher.objects.filter(status=True,
-                                                course__pk=course.pk)
-              serializer = TeacherSimpleSerializer(instance=queryset,
-                                                   many=True)
-              return serializer.data
+                queryset = Teacher.objects.filter(status=True,
+                                                  course__pk=course.pk)
+                serializer = TeacherSimpleSerializer(instance=queryset,
+                                                     many=True)
+                return serializer.data
         except Teacher.DoesNotExist:
             return None
 
@@ -49,8 +47,31 @@ class ClassSerializer(serializers.ModelSerializer):
                   'teachers')
 
 
+class SimpleClassSerializer(serializers.ModelSerializer):
+    start_time = serializers.TimeField(format='%-I:%M',
+                                       required=False, read_only=True)
+    start_time_end = serializers.SerializerMethodField()
+    end_time = serializers.TimeField(format='%-I:%M',
+                                     required=False, read_only=True)
+
+    end_time_end = serializers.SerializerMethodField()
+
+    def get_start_time_end(self, course):
+        return course.start_time.strftime('%p')
+
+    def get_end_time_end(self, course):
+        return course.end_time.strftime('%p')
+
+    class Meta:
+        model = Class
+        fields = ('id', 'name', 'slug',
+                  'day', 'start_time',
+                  'start_time_end',
+                  'end_time', 'end_time_end')
+
+
 class TeacherSerializer(serializers.ModelSerializer):
-    course = ClassSerializer(many=True, read_only=True)
+    course = SimpleClassSerializer(many=True, read_only=True)
     image_thumbnail = serializers.SerializerMethodField('get_image_thumbnail_url')
     image_small = serializers.SerializerMethodField('get_image_small_url')
     image_medium = serializers.SerializerMethodField('get_image_medium_url')
@@ -71,8 +92,9 @@ class TeacherSerializer(serializers.ModelSerializer):
 
     def get_image_full_url(self, obj):
         return obj.image.url
+
     def get_image_url(self, obj):
-      return obj.image_medium.url
+        return obj.image_medium.url
 
     class Meta:
         model = Teacher

@@ -38,4 +38,4 @@ class Image(models.Model):
                                  format='JPEG', options={'quality': 60})
 
     class Meta:
-    	abstract = True
+        abstract = True

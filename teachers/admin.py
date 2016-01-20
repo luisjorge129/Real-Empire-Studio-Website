@@ -7,7 +7,8 @@ from .models import Class
 class TeacherAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
     fieldsets = (
-                ('Personal Information', {'fields':
+                ('Personal Information',
+                    {'fields':
                         ('name', 'biography',
                          'image', 'course')}),
                 ('Social Networks',
@@ -23,19 +24,20 @@ class TeacherAdmin(admin.ModelAdmin):
     list_display_links = ['id', 'name']
     list_filter = ['course', 'status']
     search_fields = ['id', 'name', 'courses']
-    filter_horizontal = ('course',) 
+    filter_horizontal = ('course',)
 
 
 class ClassAdmin(admin.ModelAdmin):
     date_hierarchy = "updated_date"
     fieldsets = (
-                ('Course Information', {'fields':
-                    ('name', ('day', 'start_time', 
-                'end_time'), 'status')}),
+                ('Course Information', {
+                    'fields': ('name', (
+                        'day', 'start_time',
+                        'end_time'), 'status')}),
                 )
     list_display = ('id', 'name', 'day',
                     'start_time', 'end_time', 'status',
-    				'created_date', 'updated_date')
+                    'created_date', 'updated_date')
     list_display_links = ['id', 'name', 'day',
                           'start_time', 'end_time']
     list_filter = ['status']
