@@ -26,7 +26,7 @@
 					 {% if events %}
            <ul class="event-list">
               {% for event in events %}
-                <li>
+                <li {% if event.is_past_due %}class="opacity"{% endif %}>
                   <time datetime="{{ event.time|date:'y-m-d' }}">
                     <span class="day">{{ event.time|date:'j' }}</span>
                     <span class="month">{{ event.time|date:'M' }}</span>

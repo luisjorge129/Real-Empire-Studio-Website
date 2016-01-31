@@ -13,7 +13,8 @@ class ApiEventList(generics.ListAPIView):
 
 
 class EventsListView(ListView):
-    queryset = Event.objects.filter(status=True)
+    queryset = Event.objects.filter(
+        status=True).order_by('-created_date')
     template_name = "events_list.html"
     context_object_name = "events"
 

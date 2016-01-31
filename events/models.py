@@ -1,4 +1,6 @@
+from datetime import date
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from autoslug import AutoSlugField
 from redactor.fields import RedactorField
@@ -21,3 +23,11 @@ class Event(TimeStampedModel, Image):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('events:events_detail', kwargs={'slug': self.slug})
+
+    def is_past_due(self):
+        if date.today() > self.time.date():
+            return True
+        return False

@@ -138,6 +138,9 @@ background-color: rgb(79, 213, 248) !important;
 color: rgb(255, 255, 255) !important;
 background-color: rgb(221, 75, 57) !important;
 }
+.opacity{
+	opacity: 0.8;
+}
 
 @media (min-width: 768px) {
 .event-list > li {

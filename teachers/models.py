@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from core.models import TimeStampedModel
 from core.models import Image
@@ -23,6 +24,9 @@ class Teacher(TimeStampedModel, Image):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('teachers:teachers_detail', kwargs={'slug': self.slug})
 
 
 class Class(TimeStampedModel):
