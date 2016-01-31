@@ -28,7 +28,7 @@ class ApiTeachersDetailView(generics.RetrieveAPIView):
 class ClassFilter(FilterSet):
     class Meta:
         model = Class
-        fields = ['day',]
+        fields = ['day', ]
 
 
 class ApiClassList(generics.ListAPIView):
@@ -38,7 +38,6 @@ class ApiClassList(generics.ListAPIView):
     filter_class = ClassFilter
     page_size = 0
     order_by = 'day'
-
 
 
 class TeachersListView(ListView):
