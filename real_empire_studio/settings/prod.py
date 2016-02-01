@@ -41,6 +41,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
+
 def get_env_setting(setting):
     """ Get the environment setting or return exception """
     try:
@@ -48,6 +49,13 @@ def get_env_setting(setting):
     except KeyError:
         error_msg = "Set the %s env variable" % setting
         raise ImproperlyConfigured(error_msg)
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
 
 SECRET_KEY = get_env_setting('SECRET_KEY')
 
