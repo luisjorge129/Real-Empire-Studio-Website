@@ -37,7 +37,7 @@ class ApiClassList(generics.ListAPIView):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ClassFilter
     page_size = 0
-    order_by = 'day'
+    order_by = 'start_time'
 
 
 class TeachersListView(ListView):
