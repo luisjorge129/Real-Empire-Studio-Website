@@ -34,10 +34,12 @@ class ClassFilter(FilterSet):
 class ApiClassList(generics.ListAPIView):
     queryset = Class.objects.filter(status=True).order_by('start_time')
     serializer_class = ClassSerializer
-    filter_backends = (filters.DjangoFilterBackend,)
+    filter_backends = (filters.DjangoFilterBackend,
+                       filters.OrderingFilter)
     filter_class = ClassFilter
+    ordering_fields = ('start_time',)
+    ordering = 'start_time'
     page_size = 0
-    order_by = 'start_time'
 
 
 class TeachersListView(ListView):
