@@ -3,13 +3,17 @@ body{
 }
 
 #first-container{
-    padding-top: 95px;
     padding-bottom: 45px;
 }
 
 .map-contact-box{
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+#real-empire-image{
+    padding-top: 95px;
+    margin: 0 auto;
 }
 
 /*---------------------
