@@ -1,32 +1,36 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     
-     {% block meta_description %}
-     <meta name="description" content="Academia de baile que cuenta con maestros y coreógrafos especializados en diferentes estilos.">
-     {% endblock %}
-     <meta name="google-site-verification" content="wQNoWvWWXdR_3zq8eSLtXf_CmF7ALGQ3oCty9HgQZ0E" />
-     <meta name="Keywords" content="puertorico,bayamon,academia,baile,jazz,hiphop,hiphopkids,niños,student,masterclass,breakdance,funk,bailarines,bayamon,guaynabo,vegaalta,sanjuan,toaalta,pr,dace,real,empire,studio,art,entertainment,riohondo," />
-     <meta name="google-site-verification" content="wQNoWvWWXdR_3zq8eSLtXf_CmF7ALGQ3oCty9HgQZ0E" />
-     <meta name="google-site-verification" content="yuSvOOuW4FeMborHvXsLkYWK2gfh6YnSQ1X3RoeK394" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block meta_description %}
+    <meta name="description" content="Academia de baile que cuenta con maestros y coreógrafos especializados en diferentes estilos.">
+    {% endblock %}
+    <meta name="content-language" content="es" />
+    <meta name="language" content="es" />
+    <meta name="google-site-verification" content="wQNoWvWWXdR_3zq8eSLtXf_CmF7ALGQ3oCty9HgQZ0E" />
+    <meta name="Keywords" content="puertorico,dance,baile,academia,bayamon,jazz,hiphop,hiphopkids,niños,student,masterclass,breakdance,funk,bailarines,bayamon,guaynabo,vegaalta,sanjuan,toaalta,pr,real,empire,studio,art,entertainment,riohondo," />
+    <meta name="google-site-verification" content="wQNoWvWWXdR_3zq8eSLtXf_CmF7ALGQ3oCty9HgQZ0E" />
+    <meta name="google-site-verification" content="yuSvOOuW4FeMborHvXsLkYWK2gfh6YnSQ1X3RoeK394" />
+    <meta name="msvalidate.01" content="982CDEF9F36A9A07082E3B8C27A9E280" />
     <link rel="alternate" hreflang="es" href="http://www.realempirestudio.com/" />
+
 
     <title>Real Empire Studio | Academia de Baile {% block title %}{% endblock title %}</title>
 
     <!-- Bootstrap Core CSS -->
-     <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="">
     <!-- Fonts -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
     <!-- Custom Theme CSS -->
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/static/css/grayscale.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/geo_tire.min.css">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link href="{% static 'css/grayscale.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/geo_tire.min.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/landing.min.css' %}">
 
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-touch-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-touch-icon-60x60.png' %}">
@@ -45,8 +49,8 @@
     {# <meta name="msapplication-TileColor" content="#da532c"> #}
     <meta name="msapplication-TileImage" content="{% static 'img/favicon/mstile-144x144.png' %}">
     {# <meta name="theme-color" content="#ffffff"> #}
+    {% block extra_head %}{% endblock extra_head %}
 </head>
-
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {% block header %}
@@ -61,27 +65,34 @@
                     <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
                 </a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse"> 
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav col-sm-12 col-md-10 col-lg-8">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
+                        <li class="page-scroll {% if request.get_full_path == '/' %}active{% endif %}">
+                            <a href="{% url 'landing:landing_page' %}">Pagina Principal</a>
                         </li>
-                        <li class="page-scroll">
-                            <a href="{% url 'landing' %}">Pagina Principal</a>
+                        <li class="page-scroll {% if request.get_full_path == '/clases/' %}active{% endif %}">
+                            <a href="{% url 'teachers:class' %}">Clases</a>
                         </li>
-                        <li class="page-scroll">
-                            <a href="{% url 'class' %}">Clases y Maestros</a>
+                        <li class="page-scroll {% if request.get_full_path == '/maestros/' %}active{% endif %}">
+                            <a href="{% url 'teachers:teachers_list' %}">Maestros</a>
                         </li>
-                          <li class="page-scroll">
-                            <a href="{% url 'price' %}">Precios</a>
+                        <!--<li class="page-scroll {% if request.get_full_path == '/precios/' %}active{% endif %}">
+                            <a href="{% url 'teachers:price' %}">Precios</a>
+                        </li>-->
+                        <li class="page-scroll {% if request.get_full_path == '/eventos/' %}active{% endif %}">
+                          <a href="{% url 'events:events_list' %}">Eventos</a>
                         </li>
-                        <li class="page-scroll">
-                            <a href="{% url 'contact' %}">Contactanos</a>
+                        <li class="page-scroll {% if request.get_full_path == '/videos/' %}active{% endif %}">
+                            <a href="{% url 'gallery:video_list' %}">Videos</a>
                         </li>
-
+                        <li class="page-scroll {% if request.get_full_path == '/fotos/' %}active{% endif %}">
+                            <a href="{% url 'gallery:image_list' %}">Fotos</a>
+                        </li>
+                        <li class="page-scroll {% if request.get_full_path == '/contactano/' %}active{% endif %}">
+                            <a href="{% url 'landing:contact' %}">Contactanos</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -89,18 +100,21 @@
             <!-- /.container -->
         </nav>
     {% endblock header %}
+
     <section class="intro" >
         <div class="intro-body ">
-            <div class="container " >
-                {% block content %}{% endblock content %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <img id="real-empire-image" class="img-responsive" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
+                </div>
             </div>
+            {% block content %}{% endblock content %}
         </div>
     </section>
 
-    <script src="/../static/js/jquery-1.10.2.js"></script>
-
-    <script src="/../static/js/jquery.easing.min.js"></script>
-    <script src="/../static/js/grayscale.min.js"></script>
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/grayscale.min.js' %}"></script>
 
     {% block extra_bottom %}{% endblock extra_bottom %}
 </body>

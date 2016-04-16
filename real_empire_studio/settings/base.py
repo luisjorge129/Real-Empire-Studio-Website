@@ -30,13 +30,23 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
-    'core',
+    'imagekit',
+    'redactor',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'rest_framework',
+
     'landing_page',
+    'teachers',
+    'events',
+    'gallery',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -44,6 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
@@ -57,8 +68,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
-                # list if you haven't customized them:
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
@@ -72,22 +81,28 @@ TEMPLATES = [
     },
 ]
 
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 3,
+    'MARGIN_PAGES_DISPLAYED': 1,
+}
+
 WSGI_APPLICATION = 'real_empire_studio.wsgi.application'
 
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Puerto_Rico'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -98,3 +113,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
 )
+
+MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
+MEDIA_URL = '/media/'
+
+IMAGEKIT_CACHEFILE_DIR = 'versions'

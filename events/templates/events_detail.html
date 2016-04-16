@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	Evento - {{ event.name }}
+{% endblock title %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/events.css'%}">
+{% endblock extra_head %}
+
+{% block meta_description %}
+  <meta name="description" content="Eventos de la Academia de baile Real Empire Studio Puerto Rico Bayamón.">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" id="first-container">
+      <h1 class="intro-text">Evento</h1>
+
+      <section class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class="info" style="height: auto!important; background-color: white; color: #444; padding-top:10px; border-radius: 20px; box-shadow: 4px 4px 4px #333;">
+            <h4 class="title text-center"><strong>Evento:</strong> {{ event.name }}</h4>
+            <p class="text-center" datetime="{{ event.time|date:'y-m-d' }}">
+              <strong>Fecha: </strong>
+                <span class="day">{{ event.time|date:'j' }}</span> de
+                <span class="month">{{ event.time|date:'F' }}</span> de
+                <span class="year">{{ event.time|date:'Y' }}</span>
+            </p>
+            <p class="text-center" datetime="{{ event.time|date:'y-m-d' }}">
+              <strong>Horarios: </strong><span class="time">{{ event.time|date:'g:iA' }}</span>
+            </p>
+            <hr/>
+            {% if event.image %}
+            <p style="text-align:center;">
+              <img alt="{{ event.slug }}" src="{{ event.image_medium.url }}" style="vertical-align:middle;" class="img-thumbnail" />
+            </p>
+            {% endif %}
+            <p class="desc" style="margin: 20px 0px;"><strong>Descripción: </strong>{{ event.description|safe }}</p>
+            <div class="row">
+            {% if event.facebook %}
+              <div class="col-sm-offset-1 col-sm-3 facebook">
+                <a target="_blank" href="{{ event.facebook }}"><span class="fa fa-facebook"></span></a>
+              </div>
+            {% endif %}
+            {% if event.twitter %}
+              <div class="col-sm-3 twitter">
+                <a target="_blank" href="{{ event.twitter }}"><span class="fa fa-twitter"></span></a>
+              </div>
+            {% endif %}
+            {% if event.google_plus %}
+              <div class="col-sm-3 google-plus">
+                <a target="_blank" href="{{ event.google_plus }}"><span class="fa fa-google-plus"></span></a>
+              </div>
+            {% endif %}
+          </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+{% endblock content %}

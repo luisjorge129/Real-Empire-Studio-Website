@@ -1,0 +1,11 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^realempirestudio.com[nc]
+RewriteRule ^(.*)$ http://www.realempirestudio.com/$1 [r=301,nc]
+
+//Caching schema
+<FilesMatch "\.(js|jpg|png|css)$">
+Header set Cache-Control "public, max-age=1928448000"
+</FilesMatch>
+ 

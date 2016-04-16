@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	Eventos
+{% endblock title %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/events.css'%}">
+{% endblock extra_head %}
+
+{% block meta_description %}
+  <meta name="description" content="Lista de eventos que ofrece la Academia de baile Real Empire Studio Puerto Rico Bayamón, esta academia cuenta con maestros y coreógrafos especializados en diferentes estilos.">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" id="first-container">
+      <h1 class="intro-text">Eventos</h1>
+
+      <section>
+         <div class="col-xs-10 col-xs-offset-1">
+					 {% if events %}
+           <ul class="event-list">
+              {% for event in events %}
+                <li {% if event.is_past_due %}class="opacity"{% endif %}>
+                  <time datetime="{{ event.time|date:'y-m-d' }}">
+                    <span class="day">{{ event.time|date:'j' }}</span>
+                    <span class="month">{{ event.time|date:'M' }}</span>
+                    <span class="year">{{ event.time|date:'Y' }}</span>
+                    <span class="time">{{ event.time|date:'g:iA' }}</span>
+                  </time>
+                  {% if event.image %}<img alt="{{ event.name }}" src="{{ event.image_medium.url }}" />{% endif %}
+                  <div class="info">
+                    <h2 class="title">{{ event.name }}</h2>
+                    <p class="desc">{{ event.description|truncatechars:90|striptags }}</p>
+                    <ul>
+                      <li style="width:100%;"><a href="{% url 'events:events_detail' event.slug %}"><span class="fa fa-globe"></span> Leer mas información</a></li>
+                    </ul>
+                  </div>
+                  <div class="social-events">
+                    <ul>
+                      {% if event.facebook %}<li class="facebook" style="width:33%;"><a target="_blank" href="{{event.facebook}}"><span class="fa fa-facebook"></span></a></li>{% endif %}
+                      {% if event.twitter %}<li class="twitter" style="width:34%;"><a target="_blank" href="{{event.twitter}}"><span class="fa fa-twitter"></span></a></li>{% endif %}
+                      {% if event.google_plus %}<li class="google-plus" style="width:33%;"><a target="_blank" href="{{ event.google_plus }}"><span class="fa fa-google-plus"></span></a></li>{% endif %}
+                    </ul>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+						{% else %}
+							<h2>No hay ningun evento actualmente, se anunciaran proximamente.</h2>
+						{% endif %}
+          </div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+        </section>
+      </div>
+  </div>
+{% endblock content %}

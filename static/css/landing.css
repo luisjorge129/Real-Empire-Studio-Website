@@ -3,13 +3,17 @@ body{
 }
 
 #first-container{
-    padding-top: 95px;
     padding-bottom: 45px;
 }
 
 .map-contact-box{
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+#real-empire-image{
+    padding-top: 95px;
+    margin: 0 auto;
 }
 
 /*---------------------
@@ -99,7 +103,7 @@ input.btn.btn-lg:focus {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-button.btn {
+button.btn-landing {
     width: 40%;
     height: 60px;
     border-top-left-radius: 0;
@@ -108,9 +112,22 @@ button.btn {
 
 
 .teachers-box > div{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    height: 325px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.teachers-box h5{
+    height: 58px;
+    word-break: break-word;
+    font-size: 15px;
+}
+
+.teachers-box img{
+    margin: 0 auto;
+}
+
+.teachers-box span{
+    margin-top: 1px;
 }
 
 .embed-responsive-16by9 {
@@ -142,7 +159,57 @@ button.btn {
     font-size: 115px;
 }
 
+.pagination{
+    font-size: 28px;
+}
 
+.video-box h4,
+.video-box p{
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.video-box h4{
+    font-size: 16px;
+    height: 33px;
+}
+
+.video-box p{
+    font-size: 14px;
+    height: 40px;
+}
+
+.video-box span{
+    margin-right: 1px;
+}
+
+.pagination{
+    font-size: 20px;
+}
+
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width: 0px) and (max-width : 767px) {
+    .pagination{
+        font-size: 14px;
+        float: left!important;
+    }
+    .gallery-box{
+        max-height: 334px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
 @media only screen and (min-device-width: 1200px)  {
 
 }
@@ -162,6 +229,7 @@ button.btn {
         margin: 0 auto;
     }
 }
+
 
 @media only screen and (max-device-width: 480px){
 

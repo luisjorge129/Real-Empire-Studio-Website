@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	Videos de la academia
+{% endblock title %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/teachers.css'%}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock extra_head %}
+
+{% block meta_description %}
+  <meta name="description" content="Videos de la Academia de baile Real Empire Studio Puerto Rico Bayamón, esta academia cuenta con maestros y coreógrafos especializados en diferentes estilos.">
+{% endblock %}
+
+{% block content %}
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1" id="first-container">
+      <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
+      <img id="real-empire-image" src="{% static 'img/realempire2.png' %}" alt="Real Empire Logo" />
+
+      <h1 class="intro-text header-division">Videos</h1>
+
+      <section>
+         <div class="col-xs-12">
+          {% if categories_list %}
+            <p class="text-left" for="">Categorias: </label>
+              <a href="?category__name=" class="label label-primary">Todas</a>
+              {% for category in categories_list %}
+                <a href="?category__name={{ category.name }}" class="label label-primary">{{ category.name }}</a>
+              {% endfor %}
+            </p>
+          {% endif %}
+
+           <div class="row">
+             {% for video in page_obj.object_list %}
+                  <div class="col-xs-12 col-sm-6 col-md-4 video-box">
+                    <h4><strong>{{ video.name }}</strong></h3>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      {% if video.video_type == 'Youtube' %}
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ video.video_id }}?rel=0&html5=true" allowfullscreen></iframe>
+                      {% else %}
+                        <div class="fb-video embed-responsive-item" data-href="https://www.facebook.com/facebook/videos/{{ video.video_id }}/" data-width="500"></div>
+                      {% endif %}
+                    </div>
+                    <p>{{ video.description }}</p>
+                    <p>
+											{% if video.category.all %}
+                      <span>Categorias: </span>{% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+											{% endif %}
+                    </p>
+                  </div>
+             {% endfor %}
+
+            <div class="col-xs-12">
+             {% include "pagination.html" %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_bottom %}
+  <script>
+    $(document).ready(function() {
+      $(".btn-pref .btn").click(function () {
+          $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+          $(this).removeClass("btn-default").addClass("btn-primary");
+      });
+    });
+
+  </script>
+{% endblock extra_bottom %}

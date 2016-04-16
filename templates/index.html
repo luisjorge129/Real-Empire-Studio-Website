@@ -9,8 +9,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2" id="first-container" style="padding-top: 70px;">
             <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
-            <img id="real-empire-image" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
-            <p class="intro-text">Pagina Principal de la Academia de baile Real Empire Studio, academia que cuenta con maestros y coreógrafos especializados en diferentes estilos.</u></p>
+            <h1 class="intro-text">Pagina Principal de la Academia de baile Real Empire Studio, academia que cuenta con maestros y coreógrafos especializados en diferentes estilos.</h1>
 
             <!-- END TIMER -->
                 <div class="text-center row">
@@ -18,11 +17,11 @@
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/awQ_N23JbFM?rel=0&html5=true" allowfullscreen></iframe>
                     </div>
                     <div class="col-md-12">
-                        <form action="{% url 'landing' %}" method="post">
+                        <form action="{% url 'landing:landing_page' %}" method="post">
                             {% csrf_token %}
                             <div class="input-group">
                                 <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
-                                <button id="subscribe-btn" class="btn btn-info btn-lg"  type="submit">Subscribete</button>
+                                <button id="subscribe-btn" class="btn btn-info btn-lg btn-landing"  type="submit">Subscribete</button>
                             </div>
                         </form>
                     </div>

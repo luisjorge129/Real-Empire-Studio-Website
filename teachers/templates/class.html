@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	| Clases
+{% endblock title %}
+
+{% block meta_description %}
+  <meta name="description" content="Clases, horarios y maestros que ofrece la Academia Real Empire Studio.">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" id="first-container">
+             <h1>Clases y Horarios</h1>
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-8">
+                    {% if monday_list %}
+                      <h2 class="text-left"><strong>Lunes</strong></h2>
+                      <h4>
+                        <table class="table text-left">
+                          <thead>
+                            <tr>
+                              <th>Horarios</th>
+                              <th>Clases</th>
+                              <th>Maestros</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for course in monday_list %}
+                              <tr>
+                                <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
+                                <td>{{ course.name }}</td>
+                                <td>
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
+                                </td>
+                                <td></td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </h4>
+                    {% endif %}
+
+                    {% if tuesday_list %}
+                      <h2 class="text-left"><strong>Martes</strong></h2>
+                      <h4>
+                        <table class="table text-left">
+                          <thead>
+                            <tr>
+                              <th>Horarios</th>
+                              <th>Clases</th>
+                              <th>Maestros</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for course in tuesday_list %}
+                              <tr>
+                                <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
+                                <td>{{ course.name }}</td>
+                                <td>
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </h4>
+                    {% endif %}
+
+                    {% if wednesday_list %}
+                      <h2 class="text-left"><strong>Miercoles</strong></h2>
+                      <h4>
+                        <table class="table text-left">
+                          <thead>
+                            <tr>
+                              <th>Horarios</th>
+                              <th>Clases</th>
+                              <th>Maestros</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for course in wednesday_list %}
+                              <tr>
+                                <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
+                                <td>{{ course.name }}</td>
+                                <td>
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </h4>
+                    {% endif %}
+
+                    {% if thursday_list %}
+                      <h2 class="text-left"><strong>Jueves</strong></h2>
+                      <h4>
+                        <table class="table text-left">
+                          <thead>
+                            <tr>
+                              <th>Horarios</th>
+                              <th>Clases</th>
+                              <th>Maestros</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for course in thursday_list %}
+                              <tr>
+                                <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
+                                <td>{{ course.name }}</td>
+                                <td>
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </h4>
+                    {% endif %}
+
+                    {% if friday_list %}
+                      <h2 class="text-left"><strong>Viernes</strong></h2>
+                      <h4>
+                        <table class="table text-left">
+                          <thead>
+                            <tr>
+                              <th>Horarios</th>
+                              <th>Clases</th>
+                              <th>Maestros</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for course in friday_list %}
+                              <tr>
+                                <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
+                                <td>{{ course.name }}</td>
+                                <td>
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </h4>
+                    {% endif %}
+
+                    {% if saturday_list %}
+                      <h2 class="text-left"><strong>Sabado</strong></h2>
+                      <h4>
+                        <table class="table text-left">
+                          <thead>
+                            <tr>
+                              <th>Horarios</th>
+                              <th>Clases</th>
+                              <th>Maestros</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for course in saturday_list %}
+                              <tr>
+                                <td>{{ course.start_time|date:'g:iA' }}-{{ course.end_time|date:'g:iA' }}</td>
+                                <td>{{ course.name }}</td>
+                                <td>
+                                  {% if course.teacher_set.all %}
+                                    {% for teacher in course.teacher_set.all %}
+                                      {{ teacher }}{% if not forloop.last %} - {% endif %}
+                                    {% endfor %}
+                                  {% else %}
+                                    Se anunciara
+                                  {% endif %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </h4>
+                    {% endif %}
+                  </div>
+                </div>
+            </div>
+            <br>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
