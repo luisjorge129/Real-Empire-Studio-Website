@@ -32,7 +32,7 @@ class ClassFilter(FilterSet):
 
 
 class ApiClassList(generics.ListAPIView):
-    queryset = Class.objects.filter(status=True).order_by('id')
+    queryset = Class.objects.filter(status=True).order_by('start_time')
     serializer_class = ClassSerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ClassFilter
