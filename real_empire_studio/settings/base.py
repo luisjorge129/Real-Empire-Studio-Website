@@ -23,7 +23,6 @@ SITE_ROOT = dirname(DJANGO_ROOT)
 # Application definition
 
 INSTALLED_APPS = (
-    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,8 +55,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
-
-BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 ROOT_URLCONF = 'real_empire_studio.urls'
 
