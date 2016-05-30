@@ -1883,6 +1883,15 @@ msgstr "Categories"
 msgid "Photos"
 msgstr "Fotos"
 
+msgid "Maestros"
+msgstr "Teachers"
+
+msgid "Fotos"
+msgstr "Photos"
+
+msgid "Eventos"
+msgstr "Events"
+
 msgid "Contact US"
 msgstr "Contáctanos"
 

@@ -57,56 +57,57 @@
             <div class="row">
                 <div class="col-xs-12">
                     {% block header %}
-        <!-- Navigation -->
-        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll no-border" href="#page-top">
-                    <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav col-sm-12 col-md-11 col-lg-9">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="page-scroll {% if request.get_full_path == '/' %}active{% endif %}">
-                            <a href="{% url 'landing:landing_page' %}">{% blocktrans %}Home Page{% endblocktrans %}</a>
-                        </li>
-                        <li class="page-scroll {% if request.get_full_path == '/clases/' %}active{% endif %}">
-                            <a href="{% url 'teachers:class' %}">{% blocktrans %}Classes{% endblocktrans %}</a>
-                        </li>
-                        <li class="page-scroll {% if request.get_full_path == '/maestros/' %}active{% endif %}">
-                            <a href="{% url 'teachers:teachers_list' %}">{% blocktrans %}Teachers{% endblocktrans %}</a>
-                        </li>
-                        <!--<li class="page-scroll {% if request.get_full_path == '/precios/' %}active{% endif %}">
-                            <a href="{% url 'teachers:price' %}">Precios</a>
-                        </li>-->
-                        <li class="page-scroll {% if request.get_full_path == '/eventos/' %}active{% endif %}">
-                          <a href="{% url 'events:events_list' %}">{% blocktrans %}Events{% endblocktrans %}</a>
-                        </li>
-                        <li class="page-scroll {% if request.get_full_path == '/videos/' %}active{% endif %}">
-                            <a href="{% url 'gallery:video_list' %}">Videos</a>
-                        </li>
-                        <li class="page-scroll {% if request.get_full_path == '/fotos/' %}active{% endif %}">
-                            <a href="{% url 'gallery:image_list' %}">{% blocktrans %}Photos{% endblocktrans %}</a>
-                        </li>
-                        <li class="page-scroll {% if request.get_full_path == '/contacto/' %}active{% endif %}">
-                            <a href="{% url 'landing:contact' %}">{% blocktrans %}Contact US{% endblocktrans %}</a>
-                        </li>
-                        <li>
-                          <a href="{{ request.path|do_translate_url }}">{{ 'es'|language_label }}</a>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- Navigation -->
+                        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                            <div class="container">
+                                <div class="navbar-header page-scroll">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar collapse">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand page-scroll no-border" href="#page-top">
+                                    <img id="real-empire-image-mobile" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
+                                </a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav col-sm-12 col-md-11 col-lg-9">
+                                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                                        <li class="page-scroll {% if request.get_full_path == '/' %}active{% endif %}">
+                                            <a href="{% url 'landing:landing_page' %}">{% blocktrans %}Home Page{% endblocktrans %}</a>
+                                        </li>
+                                        <li class="page-scroll {% if request.get_full_path == '/clases/' %}active{% endif %}">
+                                            <a href="{% url 'teachers:class' %}">{% blocktrans %}Classes{% endblocktrans %}</a>
+                                        </li>
+                                        <li class="page-scroll {% if request.get_full_path == '/maestros/' %}active{% endif %}">
+                                            <a href="{% url 'teachers:teachers_list' %}">{% blocktrans %}Teachers{% endblocktrans %}</a>
+                                        </li>
+                                        <!--<li class="page-scroll {% if request.get_full_path == '/precios/' %}active{% endif %}">
+                                            <a href="{% url 'teachers:price' %}">Precios</a>
+                                        </li>-->
+                                        <li class="page-scroll {% if request.get_full_path == '/eventos/' %}active{% endif %}">
+                                          <a href="{% url 'events:events_list' %}">{% blocktrans %}Events{% endblocktrans %}</a>
+                                        </li>
+                                        <li class="page-scroll {% if request.get_full_path == '/videos/' %}active{% endif %}">
+                                            <a href="{% url 'gallery:video_list' %}">Videos</a>
+                                        </li>
+                                        <li class="page-scroll {% if request.get_full_path == '/fotos/' %}active{% endif %}">
+                                            <a href="{% url 'gallery:image_list' %}">{% blocktrans %}Photos{% endblocktrans %}</a>
+                                        </li>
+                                        <li class="page-scroll {% if request.get_full_path == '/contacto/' %}active{% endif %}">
+                                            <a href="{% url 'landing:contact' %}">{% blocktrans %}Contact US{% endblocktrans %}</a>
+                                        </li>
+                                        <li>
+                                          <a href="{{ request.path|do_translate_url }}">{{ 'es'|language_label }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-    {% endblock header %}
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container -->
+                        </nav>
+                    {% endblock header %}
+
                     <img id="real-empire-image" class="img-responsive" src="{% static "img/realempire2.png" %}" alt="Real-Empire-Studio-Logo" />
                 </div>
             </div>
