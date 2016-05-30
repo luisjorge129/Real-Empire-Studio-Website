@@ -1887,7 +1887,7 @@ msgid "Maestros"
 msgstr "Teachers"
 
 msgid "Fotos"
-msgstr "Photos"
+msgstr "Photos
 
 msgid "Eventos"
 msgstr "Events"
