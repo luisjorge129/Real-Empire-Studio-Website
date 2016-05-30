@@ -1865,7 +1865,7 @@ msgstr ""
 
 #: templates/base.html:89
 msgid ""
-"Disculpe los inconvenientes, pero la pagina que"
+"Disculpe los inconvenientes, pero la pagina que "
 "trato de accesar no fue encontrada."
 msgstr ""
 "Sorry for the inconvenience, but the page you"
