@@ -1887,7 +1887,7 @@ msgid "Maestros"
 msgstr "Teachers"
 
 msgid "Fotos"
-msgstr "Photos
+msgstr "Photos"
 
 msgid "Eventos"
 msgstr "Events"
@@ -1924,6 +1924,9 @@ msgstr "Schedule"
 
 msgid "Clases"
 msgstr "Classes"
+
+msgid "Classes"
+msgstr "Clases"
 
 msgid "Clase"
 msgstr "Class"
