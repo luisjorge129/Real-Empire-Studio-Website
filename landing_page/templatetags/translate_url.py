@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django import template
 from django.utils import translation
 
@@ -25,7 +26,7 @@ def language_label(path):
     if language == 'en':
         language = 'English'
     elif language == 'es':
-        language = 'Espanol'
+        language = 'Español'
 
     return language
 

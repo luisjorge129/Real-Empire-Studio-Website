@@ -32,7 +32,7 @@
 
                   <h5 style="font-family: 'Jura', sans-serif;">
                     {% if teacher.course.all %}
-                      <span>{% blocktrans %}Clase{% endblocktrans %}{{ teacher.course.all|pluralize }}: </span>
+                      <span>{% blocktrans %}Clase{% endblocktrans %}: </span>
                       {% for course in teacher.course.all %}<span class="label label-primary">{{ course }}</span>{% if not forloop.last %} - {% endif %}{% endfor %}
                     {% else %}
                       <span>{% blocktrans %}Clase{% endblocktrans %}:</span> {% blocktrans %}Por anunciar{% endblocktrans %}.

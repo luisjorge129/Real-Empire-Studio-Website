@@ -1828,6 +1828,10 @@ msgid "Eventos"
 msgstr "Events"
 
 #: templates/base.html:89
+msgid "Evento"
+msgstr "Event"
+
+#: templates/base.html:89
 msgid "Leer mas información"
 msgstr "Read more information"
 

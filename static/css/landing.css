@@ -134,6 +134,13 @@ button.btn-landing {
     padding-bottom: 56.25%!important;
 }
 
+.embed-responsive-item{
+  background-image: url('/static/img/loading.gif');
+  background-size: 173px;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+}
+
 .embed-responsive {
     position: relative;
     display: block;
@@ -188,7 +195,7 @@ button.btn-landing {
 }
 
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width: 0px) and (max-width : 767px) {
     .pagination{
         font-size: 14px;
