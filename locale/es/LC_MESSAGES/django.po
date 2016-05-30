@@ -1959,3 +1959,11 @@ msgstr "Saturday"
 #: templates/index.html:37
 msgid "Domingo"
 msgstr "Sunday"
+
+#: templates/index.html:37
+msgid ""
+"Gracias por subscribirse! Lo matendremos informado sobre todo tipo de clases, "
+"maestros y eventos de nuestra academia."
+msgstr ""
+"Thanks for Subscribing! We will let you know about classes, "
+"teachers and events related to the dance academy."
