@@ -1895,6 +1895,9 @@ msgstr "Events"
 msgid "Contact US"
 msgstr "Contáctanos"
 
+msgid "Contáctanos"
+msgstr "Contact US"
+
 #: templates/index.html:13
 msgid ""
 "Pagina Principal de la Academia de baile Real Empire Studio, academia que "
