@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-  | Contactanos
+  | Contáctanos
 {% endblock title %}
 
 {% block meta_description %}
@@ -12,20 +13,20 @@
 {% block content %}
     <div class="row">
         <div class="col-md-10 col-md-offset-1" id="first-container">
-            <h1>Contactanos</h1>
+            <h1>{% blocktrans %}Contáctanos{% endblocktrans %}</h1>
 
             <div class="map-contact-box">
                 <div class="col-xs-12 col-sm-7">
-                  <h1 style="font-family: 'Jura', sans-serif;">Localización</h1>
+                  <h1 style="font-family: 'Jura', sans-serif;">{% blocktrans %}Localización{% endblocktrans %}</h1>
                     <div style="margin: 0px;" id="map"></div>
                 </div>
 
                 <div  class="col-xs-12 col-sm-5">
-                  <h1 style="font-family: 'Jura', sans-serif;text-align: center;margin-left: 0px;margin-top: 20px;">Online</h1>
+                  <h1 style="font-family: 'Jura', sans-serif;text-align: center;margin-left: 0px;margin-top: 20px;">{% blocktrans %}Online{% endblocktrans %}</h1>
                   <div class=".col-sm-3">
                     <div class="social-media  col-sm-6">
-                        
-              
+
+
                         <a  href="https://www.facebook.com/real.empire.739?fref=ts" target="_blank"><i class="fa fa-facebook social"></i></a>
                         <h3 style="font-family: 'Jura', sans-serif;">Facebook</h3>
                                              </div>
@@ -40,8 +41,8 @@
                   <div class=".col-sm-3">
 
                     <div class="social-media  col-sm-6">
-                        
-              
+
+
                         <a  href="https://instagram.com/realempirestudio/" target="_blank"><i class="fa fa-instagram social"></i></a>
                     <h3 style="font-family: 'Jura', sans-serif;">Instagram</h3>
                                              </div>
@@ -54,15 +55,15 @@
                  </div>
 
                  <div class="col-xs-12 col-sm-5">
-                   <p><small><strong>Dirección:</strong>Calle 25 Blq DD-17 local 202 Riverview  Bayamon PR 00961</p></small>
+                   <p><small><strong>{% blocktrans %}Dirección{% endblocktrans %}: </strong> Calle 25 Blq DD-17 local 202 Riverview  Bayamon PR 00961</p></small>
                  </div>
 
                 <div class="col-xs-12 col-sm-5">
                      <form action="{% url 'landing:landing_page' %}" method="post">
                         {% csrf_token %}
                       <div class="input-group">
-                         <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
-                         <button id="subscribe-btn" class="btn btn-info btn-lg font-subscribe btn-landing"  type="submit">Subscribete</button>
+                         <input class="text-box" name="email" id="email" type="email" placeholder="{% trans 'Tu Email' %}" required>
+                         <button id="subscribe-btn" class="btn btn-info btn-lg font-subscribe btn-landing"  type="submit">{% blocktrans %}Subscribete{% endblocktrans %}</button>
                       </div>
                      </form>
                 </div>

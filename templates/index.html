@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block meta_description %}
      <meta name="description" content="Academia de baile que cuenta con maestros y coreógrafos especializados en diferentes estilos.">
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2" id="first-container" style="padding-top: 70px;">
-            <!-- <h3 class="brand-heading">Real Empire Studio</h3> -->
-            <h1 class="intro-text">Pagina Principal de la Academia de baile Real Empire Studio, academia que cuenta con maestros y coreógrafos especializados en diferentes estilos.</h1>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2" id="first-container" style="padding-top: 70px;">
+        <h1 class="intro-text">
+                <h1 class="intro-text">{% blocktrans %}Pagina Principal de la Academia de baile Real Empire Studio, academia que cuenta con maestros y coreógrafos especializados en diferentes estilos.{% endblocktrans %}</h1>
 
-            <!-- END TIMER -->
                 <div class="text-center row">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/awQ_N23JbFM?rel=0&html5=true" allowfullscreen></iframe>
@@ -20,8 +20,8 @@
                         <form action="{% url 'landing:landing_page' %}" method="post">
                             {% csrf_token %}
                             <div class="input-group">
-                                <input class="text-box" name="email" id="email" type="email" placeholder="Your Email" required>
-                                <button id="subscribe-btn" class="btn btn-info btn-lg btn-landing"  type="submit">Subscribete</button>
+                                <input class="text-box" name="email" id="email" type="email" placeholder="{% trans 'Tu Email' %}" required>
+                                <button id="subscribe-btn" class="btn btn-info btn-lg btn-landing"  type="submit">{% trans "Subscribete" %}</button>
                             </div>
                         </form>
                     </div>

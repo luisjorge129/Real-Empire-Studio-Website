@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
 	Videos de la academia
@@ -26,13 +27,13 @@
   <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1" id="first-container">
 
-      <h1 class="intro-text header-division">Videos</h1>
+      <h1 class="intro-text header-division">{% blocktrans %}Videos{% endblocktrans %}</h1>
 
       <section>
          <div class="col-xs-12">
           {% if categories_list %}
-            <p class="text-left" for="">Categorias: </label>
-              <a href="?category__name=" class="label label-primary">Todas</a>
+            <p class="text-left" for="">{% blocktrans %}Categorias{% endblocktrans %}: </label>
+              <a href="?category__name=" class="label label-primary">{% blocktrans %}Todas{% endblocktrans %}</a>
               {% for category in categories_list %}
                 <a href="?category__name={{ category.name }}" class="label label-primary">{{ category.name }}</a>
               {% endfor %}
@@ -53,7 +54,7 @@
                     <p>{{ video.description }}</p>
                     <p>
 											{% if video.category.all %}
-                      <span>Categorias: </span>{% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+                      <span>{% blocktrans %}Categorias{% endblocktrans %}: </span>{% for category in video.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
 											{% endif %}
                     </p>
                   </div>

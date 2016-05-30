@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
   Fotos de la academia
@@ -20,13 +21,13 @@
   <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1" id="first-container">
 
-      <h1 class="intro-text header-division">Fotos</h1>
+      <h1 class="intro-text header-division">{% blocktrans %}Fotos{% endblocktrans %}</h1>
 
       <section>
          <div class="col-xs-12">
           {% if categories_list %}
-            <p class="text-left" for="">Categorias: </label>
-              <a href="?category__name=" class="label label-primary">Todas</a>
+            <p class="text-left" for="">{% blocktrans %}Categorias{% endblocktrans %}: </label>
+              <a href="?category__name=" class="label label-primary">{% blocktrans %}Todas{% endblocktrans %}</a>
               {% for category in categories_list %}
                 <a href="?category__name={{ category.name }}" class="label label-primary">{{ category.name }}</a>
               {% endfor %}
@@ -43,7 +44,7 @@
                     <p>{{ gallery.description }}</p>
                     <p>
                       {% if gallery.category.all %}
-                      <span>Categorias: </span>{% for category in gallery.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
+                      <span>{% blocktrans %}Categorias{% endblocktrans %}: </span>{% for category in gallery.category.all %}<span class="label label-primary">{{ category }}</span>{% endfor %}
                       {% endif %}
                     </p>
                   </div>
@@ -82,12 +83,12 @@
                           <div class="col-xs-6 text-left">
                             <button type="button" class="btn btn-default prev" style="height: 40px;">
                                 <i class="glyphicon glyphicon-chevron-left"></i>
-                                Previous
+                                {% blocktrans %}Previous{% endblocktrans %}
                             </button>
                           </div>
                           <div class="col-xs-6 text-right">
                             <button type="button" class="btn btn-primary next">
-                                Next
+                                {% blocktrans %}Next{% endblocktrans %}
                                 <i class="glyphicon glyphicon-chevron-right"></i>
                             </button>
                           </div>
@@ -105,8 +106,8 @@
     $(document).ready(function() {
       $(".btn-pref .btn").click(function () {
           $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
-          // $(".tab").addClass("active"); // instead of this do the below 
-          $(this).removeClass("btn-default").addClass("btn-primary");   
+          // $(".tab").addClass("active"); // instead of this do the below
+          $(this).removeClass("btn-default").addClass("btn-primary");
       });
     });
   </script>

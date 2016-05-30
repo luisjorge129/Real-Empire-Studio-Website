@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
     <div class="row">
       <div class="col-md-8 col-md-offset-2" id="first-container" style="padding-top: 70px;">
- 
+
 
         <h1 class="generic-error">500</h1>
-        <h2 class="font-light">Disculpe los inconveniente, pero la pagina que trato de accesar no esta disponible por problemas con el servidor.</h2><br>
+        <h2 class="font-light">{% blocktrans %}Disculpe los inconveniente, pero la pagina que trato de accesar no esta disponible por problemas con el servidor.{% endblocktrans %}</h2><br>
 
         </div>
       </div>

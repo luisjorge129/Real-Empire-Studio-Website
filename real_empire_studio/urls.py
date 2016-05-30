@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
+from django.conf.urls.i18n import i18n_patterns
 
 from core.sitemaps import HomeSitemap
 from core.sitemaps import ContactoSitemap
@@ -40,7 +41,9 @@ urlpatterns = [
                              content_type='text/plain')),
 
     url(r'^redactor/', include('redactor.urls')),
+]
 
+urlpatterns += i18n_patterns(
     url(r'^', include('landing_page.urls', namespace="landing")),
 
     url(r'^', include('teachers.urls', namespace="teachers")),
@@ -48,4 +51,4 @@ urlpatterns = [
     url(r'^', include('events.urls', namespace="events")),
 
     url(r'^', include('gallery.urls', namespace="gallery")),
-]
+)

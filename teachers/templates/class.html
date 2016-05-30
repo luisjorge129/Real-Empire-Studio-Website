@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
 	| Clases
@@ -12,20 +13,20 @@
 {% block content %}
     <div class="row">
         <div class="col-md-8 col-md-offset-2" id="first-container">
-             <h1>Clases y Horarios</h1>
+             <h1>{% blocktrans %}Clases y Horarios{% endblocktrans %}</h1>
 
             <div class="container">
                 <div class="row">
                   <div class="col-md-8">
                     {% if monday_list %}
-                      <h2 class="text-left"><strong>Lunes</strong></h2>
+                      <h2 class="text-left"><strong>{% blocktrans %}Lunes{% endblocktrans %}</strong></h2>
                       <h4>
                         <table class="table text-left">
                           <thead>
                             <tr>
-                              <th>Horarios</th>
-                              <th>Clases</th>
-                              <th>Maestros</th>
+                              <th>{% blocktrans %}Horarios{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Clases{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Maestros{% endblocktrans %}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -39,7 +40,7 @@
                                       {{ teacher }}{% if not forloop.last %} - {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                    Se anunciara
+                                    {% blocktrans %}Se anunciara{% endblocktrans %}
                                   {% endif %}
                                 </td>
                                 <td></td>
@@ -51,14 +52,14 @@
                     {% endif %}
 
                     {% if tuesday_list %}
-                      <h2 class="text-left"><strong>Martes</strong></h2>
+                      <h2 class="text-left"><strong>{% blocktrans %}Martes{% endblocktrans %}</strong></h2>
                       <h4>
                         <table class="table text-left">
                           <thead>
                             <tr>
-                              <th>Horarios</th>
-                              <th>Clases</th>
-                              <th>Maestros</th>
+                              <th>{% blocktrans %}Horarios{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Clases{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Maestros{% endblocktrans %}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -72,7 +73,7 @@
                                       {{ teacher }}{% if not forloop.last %} - {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                    Se anunciara
+                                    {% blocktrans %}Se anunciara{% endblocktrans %}
                                   {% endif %}
                                 </td>
                               </tr>
@@ -83,14 +84,14 @@
                     {% endif %}
 
                     {% if wednesday_list %}
-                      <h2 class="text-left"><strong>Miercoles</strong></h2>
+                      <h2 class="text-left"><strong>{% blocktrans %}Miercoles{% endblocktrans %}</strong></h2>
                       <h4>
                         <table class="table text-left">
                           <thead>
                             <tr>
-                              <th>Horarios</th>
-                              <th>Clases</th>
-                              <th>Maestros</th>
+                              <th>{% blocktrans %}Horarios{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Clases{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Maestros{% endblocktrans %}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -104,7 +105,7 @@
                                       {{ teacher }}{% if not forloop.last %} - {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                    Se anunciara
+                                    {% blocktrans %}Se anunciara{% endblocktrans %}
                                   {% endif %}
                                 </td>
                               </tr>
@@ -115,14 +116,14 @@
                     {% endif %}
 
                     {% if thursday_list %}
-                      <h2 class="text-left"><strong>Jueves</strong></h2>
+                      <h2 class="text-left"><strong>{% blocktrans %}Jueves{% endblocktrans %}</strong></h2>
                       <h4>
                         <table class="table text-left">
                           <thead>
                             <tr>
-                              <th>Horarios</th>
-                              <th>Clases</th>
-                              <th>Maestros</th>
+                              <th>{% blocktrans %}Horarios{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Clases{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Maestros{% endblocktrans %}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -136,7 +137,7 @@
                                       {{ teacher }}{% if not forloop.last %} - {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                    Se anunciara
+                                    {% blocktrans %}Se anunciara{% endblocktrans %}
                                   {% endif %}
                                 </td>
                               </tr>
@@ -147,14 +148,14 @@
                     {% endif %}
 
                     {% if friday_list %}
-                      <h2 class="text-left"><strong>Viernes</strong></h2>
+                      <h2 class="text-left"><strong>{% blocktrans %}Viernes{% endblocktrans %}</strong></h2>
                       <h4>
                         <table class="table text-left">
                           <thead>
                             <tr>
-                              <th>Horarios</th>
-                              <th>Clases</th>
-                              <th>Maestros</th>
+                              <th>{% blocktrans %}Horarios{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Clases{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Maestros{% endblocktrans %}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -168,7 +169,7 @@
                                       {{ teacher }}{% if not forloop.last %} - {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                    Se anunciara
+                                    {% blocktrans %}Se anunciara{% endblocktrans %}
                                   {% endif %}
                                 </td>
                               </tr>
@@ -179,14 +180,14 @@
                     {% endif %}
 
                     {% if saturday_list %}
-                      <h2 class="text-left"><strong>Sabado</strong></h2>
+                      <h2 class="text-left"><strong>{% blocktrans %}Sabado{% endblocktrans %}</strong></h2>
                       <h4>
                         <table class="table text-left">
                           <thead>
                             <tr>
-                              <th>Horarios</th>
-                              <th>Clases</th>
-                              <th>Maestros</th>
+                              <th>{% blocktrans %}Horarios{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Clases{% endblocktrans %}</th>
+                              <th>{% blocktrans %}Maestros{% endblocktrans %}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -200,7 +201,7 @@
                                       {{ teacher }}{% if not forloop.last %} - {% endif %}
                                     {% endfor %}
                                   {% else %}
-                                    Se anunciara
+                                    {% blocktrans %}Se anunciara{% endblocktrans %}
                                   {% endif %}
                                 </td>
                               </tr>
