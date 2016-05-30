@@ -1820,12 +1820,12 @@ msgid "English"
 msgstr "Español"
 
 #: templates/base.html:77
-msgid "Pagina Principal"
-msgstr "Home Page"
+msgid "Home Page"
+msgstr "Pagina Principal"
 
 #: templates/base.html:89
-msgid "Eventos"
-msgstr "Events"
+msgid "Events"
+msgstr "Eventos"
 
 #: templates/base.html:89
 msgid "Evento"
@@ -1877,17 +1877,14 @@ msgid ""
 msgstr ""
 "There are no events right now, new events will be announce shortly."
 
-#: templates/base.html:89
 msgid "Categorias"
 msgstr "Categories"
 
-#: templates/base.html:95
-msgid "Fotos"
-msgstr "Photos"
+msgid "Photos"
+msgstr "Fotos"
 
-#: templates/base.html:98
-msgid "Contáctanos"
-msgstr "Contact US"
+msgid "Contact US"
+msgstr "Contáctanos"
 
 #: templates/index.html:13
 msgid ""
@@ -1913,7 +1910,6 @@ msgstr "Classes and Schedule"
 msgid "Horarios"
 msgstr "Schedule"
 
-#: templates/index.html:27
 msgid "Clases"
 msgstr "Classes"
 
@@ -1929,9 +1925,10 @@ msgid "Por anunciar"
 msgstr "To be announced"
 
 #: templates/index.html:30
-msgid "Maestros"
-msgstr "Teachers"
+msgid "Teachers"
+msgstr "Maestros"
 
+#: templates/index.html:31
 msgid "Maestro"
 msgstr "Teacher"
 
