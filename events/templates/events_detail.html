@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block extra_head %}
-  <link rel="stylesheet" href="{% static 'css/events.css'%}">
+  <link rel="stylesheet" href="{% static 'css/events.min.css'%}">
 {% endblock extra_head %}
 
 {% block meta_description %}
@@ -38,7 +38,9 @@
               <img alt="{{ event.slug }}" src="{{ event.image_medium.url }}" style="vertical-align:middle;" class="img-thumbnail" />
             </p>
             {% endif %}
-            <p class="desc"><strong>{% blocktrans %}Descripción{% endblocktrans %}: </strong>{{ event.description|safe }}</p>
+						<div class="desc">
+            	<p><strong>{% blocktrans %}Descripción{% endblocktrans %}: </strong>{{ event.description|safe }}</p>
+						</div>
             <div class="row">
             {% if event.facebook %}
               <div class="col-sm-offset-1 col-sm-3 facebook">
