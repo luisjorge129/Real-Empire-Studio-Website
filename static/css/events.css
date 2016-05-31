@@ -78,6 +78,7 @@ font-size: 13pt;
 font-weight: 300;
 margin: 0px;
 text-align: initial;
+padding: 20px;
 }
 .event-list > li > .info > ul,
 .event-list > li > .social-events > ul {
