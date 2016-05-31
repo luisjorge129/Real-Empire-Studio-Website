@@ -34,11 +34,11 @@
             </p>
             <hr/>
             {% if event.image %}
-            <p style="text-align:center;">
+            <p class="text-center">
               <img alt="{{ event.slug }}" src="{{ event.image_medium.url }}" style="vertical-align:middle;" class="img-thumbnail" />
             </p>
             {% endif %}
-            <p class="desc" style="margin: 20px 0px;"><strong>{% blocktrans %}Descripción{% endblocktrans %}: </strong>{{ event.description|safe }}</p>
+            <p class="desc"><strong>{% blocktrans %}Descripción{% endblocktrans %}: </strong>{{ event.description|safe }}</p>
             <div class="row">
             {% if event.facebook %}
               <div class="col-sm-offset-1 col-sm-3 facebook">
