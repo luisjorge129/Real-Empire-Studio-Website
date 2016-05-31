@@ -63,6 +63,7 @@ width: 100%;
   padding:25px;
   box-shadow: 4px 4px 4px #333;
   font-family: helvetica;
+  margin: 20px;
 }
 .event-list > li > .info {
 padding-top: 5px;
