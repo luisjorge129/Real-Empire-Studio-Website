@@ -33,9 +33,6 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 
-    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
-        name='django.contrib.sitemaps.views.sitemap'),
-
     url(r'^robots\.txt$',
         TemplateView.as_view(template_name='robots.txt',
                              content_type='text/plain')),
@@ -44,6 +41,9 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
+
     url(r'^', include('landing_page.urls', namespace="landing")),
 
     url(r'^', include('teachers.urls', namespace="teachers")),
