@@ -1,5 +1,5 @@
 function initMap() {
-    var myLatLng = {lat:18.4165114, lng:-66.1642912};
+    var myLatLng = {lat:18.417051, lng:-66.163215};
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
@@ -34,7 +34,7 @@ function initMap() {
 
     $("#map").click(function(){
     // If it's an iPhone..
-    if( (navigator.platform.indexOf("iPhone") != -1) 
+    if( (navigator.platform.indexOf("iPhone") != -1)
         || (navigator.platform.indexOf("iPod") != -1)
         || (navigator.platform.indexOf("iPad") != -1))
          window.open("maps://maps.google.com/maps?q=18.415991,-66.162384");
