@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 from django.conf.urls.i18n import i18n_patterns
+from django.views.static import serve
 
 from core.sitemaps import HomeSitemap
 from core.sitemaps import ContactoSitemap
@@ -30,7 +31,7 @@ sitemaps = {
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+    url(r'^media/(?P<path>.*)$', serve,
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 
     url(r'^robots\.txt$',
